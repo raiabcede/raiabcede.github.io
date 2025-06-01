@@ -2061,3 +2061,33 @@ textarea.form-input::-webkit-resizer { display: none; }
     max-width: 70px;
   }
 }
+
+.page-visits {
+  text-align: center;
+  padding: 15px;
+  background: var(--border-gradient-onyx);
+  border-radius: 14px;
+  box-shadow: var(--shadow-2);
+  margin-top: 10px;
+}
+
+.page-visits p {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.page-visits span {
+  color: var(--orange-red-crayola);
+  font-weight: var(--fw-500);
+  font-size: var(--fs-5);
+}
+
+/* Hide the default counter.dev styling */
+.page-visits script {
+  display: none;
+}
