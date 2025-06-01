@@ -2064,11 +2064,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 .page-visits {
   text-align: center;
-  padding: 15px;
-  background: var(--border-gradient-onyx);
-  border-radius: 14px;
-  box-shadow: var(--shadow-2);
-  margin-top: 10px;
+  margin-top: 20px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -2085,9 +2081,9 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 .page-visits img {
-  height: 30px;
+  height: 25px;
   width: auto;
-  filter: brightness(0.8) contrast(1.2) hue-rotate(280deg) saturate(2000%) brightness(0.8);
+  filter: brightness(1) contrast(1.2) hue-rotate(280deg) saturate(2000%) brightness(0.5);
 }
 
 /* Hide the GoatCounter badge */
