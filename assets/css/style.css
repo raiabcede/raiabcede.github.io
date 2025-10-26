@@ -507,7 +507,10 @@ main {
 
 .about-text p { margin-bottom: 15px; }
 
-.about-text p a { display: inline; }
+.about-text p a {
+	color: #E3242B;
+	display: inline;
+}
 
 /**
  * #service 
