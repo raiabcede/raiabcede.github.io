@@ -507,7 +507,7 @@ main {
 
 .about-text p { margin-bottom: 15px; }
 
-
+.about-text p a { display: inline; }
 
 /**
  * #service 
