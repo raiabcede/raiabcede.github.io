@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Browser Locker Extension</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/images/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/images/favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/images/favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: hsl(0, 0%, 7%) !important;
+      color: hsl(0, 0%, 98%) !important;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+    }
+
+    .privacy-policy-container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 15px;
+      display: block;
+      visibility: visible;
+    }
+
+    .privacy-policy-content {
+      background: hsl(240, 2%, 12%) !important;
+      border: 1px solid hsl(0, 0%, 22%) !important;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
+      display: block;
+      visibility: visible;
+    }
+
+    .privacy-policy-content h1 {
+      color: hsl(0, 0%, 98%) !important;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      text-transform: capitalize;
+      display: block;
+      visibility: visible;
+    }
+
+    .privacy-policy-content .intro {
+      color: hsl(0, 0%, 84%) !important;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      display: block;
+      visibility: visible;
+    }
+
+    .privacy-policy-content section {
+      margin-bottom: 30px;
+      display: block;
+      visibility: visible;
+    }
+
+    .privacy-policy-content h2 {
+      color: hsl(0, 0%, 98%) !important;
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid hsl(0, 0%, 22%);
+      position: relative;
+      display: block;
+      visibility: visible;
+    }
+
+    .privacy-policy-content h2::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: #E3242B;
+      border-radius: 2px;
+    }
+
+    .privacy-policy-content p {
+      color: hsl(0, 0%, 84%) !important;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 15px;
+      display: block;
+      visibility: visible;
+    }
+
+    .privacy-policy-content ul {
+      margin-left: 20px;
+      margin-bottom: 15px;
+      display: block;
+      visibility: visible;
+    }
+
+    .privacy-policy-content li {
+      color: hsl(0, 0%, 84%) !important;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 8px;
+      list-style: disc;
+      display: list-item;
+      visibility: visible;
+    }
+
+    .privacy-policy-content .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #E3242B;
+      font-size: 14px;
+      text-decoration: none;
+      margin-top: 30px;
+      transition: 0.25s ease;
+    }
+
+    .privacy-policy-content .back-link:hover {
+      color: hsl(0, 0%, 84%);
+    }
+
+    @media (min-width: 580px) {
+      .privacy-policy-container {
+        margin: 80px auto;
+        padding: 0 30px;
+      }
+
+      .privacy-policy-content {
+        padding: 40px;
+      }
+
+      .privacy-policy-content h1 {
+        font-size: 32px;
+      }
+
+      .privacy-policy-content h2 {
+        font-size: 24px;
+      }
+
+      .privacy-policy-content .intro,
+      .privacy-policy-content p,
+      .privacy-policy-content li {
+        font-size: 15px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .privacy-policy-content {
+        padding: 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="privacy-policy-container">
+    <article class="privacy-policy-content">
+      <h1>Privacy Policy</h1>
+      
+      <p class="intro">
+        This extension is designed to protect your browser session by locking access to open tabs using a password. Your privacy is a core priority.
+      </p>
+
+      <section>
+        <h2>Data Collection</h2>
+        <p>
+          This extension does not collect, transmit, sell, or share any personal data. No information is sent to external servers or third parties.
+        </p>
+      </section>
+
+      <section>
+        <h2>Local Data Storage</h2>
+        <p>
+          All data is stored locally on your device using Chrome's chrome.storage.local, including:
+        </p>
+        <ul>
+          <li>A hashed password (SHA-256)</li>
+          <li>A hashed secret key for recovery</li>
+          <li>Lock state (locked/unlocked)</li>
+          <li>Temporarily stored tab URLs while the browser is locked</li>
+          <li>Failed login attempt count and timestamps</li>
+        </ul>
+        <p>
+          No data is stored in plain text.
+        </p>
+      </section>
+
+      <section>
+        <h2>Data Usage</h2>
+        <p>
+          Stored data is used only to:
+        </p>
+        <ul>
+          <li>Lock and unlock the browser</li>
+          <li>Prevent unauthorized access to tabs and settings</li>
+          <li>Restore tabs after unlocking</li>
+          <li>Monitor failed access attempts for security purposes</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Data Retention</h2>
+        <ul>
+          <li>All data remains on your device</li>
+          <li>Tab URLs are deleted immediately after unlocking</li>
+          <li>All stored data is removed when the extension is uninstalled</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>No Tracking or Analytics</h2>
+        <p>
+          This extension:
+        </p>
+        <ul>
+          <li>Does not use analytics</li>
+          <li>Does not track browsing activity</li>
+          <li>Does not read website content or form data</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <p>
+          If you have questions about this privacy policy, you may contact the developer via the Chrome Web Store listing.
+        </p>
+      </section>
+
+      <a href="index.html" class="back-link">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+        <span>Back to Home</span>
+      </a>
+    </article>
+  </main>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
+
