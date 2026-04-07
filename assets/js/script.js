@@ -1,159 +1,138 @@
 'use strict';
 
+// Mobile nav toggle
+const navToggle = document.getElementById('nav-toggle');
+const navList = document.querySelector('.nav-list');
 
+navToggle.addEventListener('click', function () {
+  this.classList.toggle('active');
+  navList.classList.toggle('active');
+});
 
-// element toggle function
-const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
-
-
-
-// sidebar variables
-const sidebar = document.querySelector("[data-sidebar]");
-const sidebarBtn = document.querySelector("[data-sidebar-btn]");
-
-// sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-
-
-
-// testimonials variables
-const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
-const modalContainer = document.querySelector("[data-modal-container]");
-const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
-const overlay = document.querySelector("[data-overlay]");
-
-// modal variable
-const modalImg = document.querySelector("[data-modal-img]");
-const modalTitle = document.querySelector("[data-modal-title]");
-const modalText = document.querySelector("[data-modal-text]");
-
-// modal toggle function
-const testimonialsModalFunc = function () {
-  modalContainer.classList.toggle("active");
-  overlay.classList.toggle("active");
-}
-
-// add click event to all modal items
-for (let i = 0; i < testimonialsItem.length; i++) {
-
-  testimonialsItem[i].addEventListener("click", function () {
-
-    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
-
-    testimonialsModalFunc();
-
+// Close mobile nav on link click
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    navToggle.classList.remove('active');
+    navList.classList.remove('active');
   });
+});
 
-}
+// Active nav link on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
 
-// add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
-
-
-
-// custom select variables
-const select = document.querySelector("[data-select]");
-const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
-const filterBtn = document.querySelectorAll("[data-filter-btn]");
-
-select.addEventListener("click", function () { elementToggleFunc(this); });
-
-// add event in all select items
-for (let i = 0; i < selectItems.length; i++) {
-  selectItems[i].addEventListener("click", function () {
-
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    elementToggleFunc(select);
-    filterFunc(selectedValue);
-
-  });
-}
-
-// filter variables
-const filterItems = document.querySelectorAll("[data-filter-item]");
-
-const filterFunc = function (selectedValue) {
-
-  for (let i = 0; i < filterItems.length; i++) {
-
-    if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
-      filterItems[i].classList.add("active");
-    } else {
-      filterItems[i].classList.remove("active");
+function highlightNav() {
+  const scrollY = window.scrollY + 120;
+  sections.forEach(section => {
+    const top = section.offsetTop;
+    const height = section.offsetHeight;
+    const id = section.getAttribute('id');
+    if (scrollY >= top && scrollY < top + height) {
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + id) {
+          link.classList.add('active');
+        }
+      });
     }
+  });
+}
 
+window.addEventListener('scroll', highlightNav);
+
+// Header background on scroll
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.3)';
+  } else {
+    header.style.boxShadow = 'none';
+  }
+});
+
+// Portfolio filter
+const filterBtns = document.querySelectorAll('[data-filter-btn]');
+const filterItems = document.querySelectorAll('[data-filter-item]');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', function () {
+    const value = this.textContent.toLowerCase();
+
+    filterBtns.forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+
+    filterItems.forEach(item => {
+      if (value === 'all' || value === item.dataset.category) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
+  });
+});
+
+// Gallery modal
+document.addEventListener('DOMContentLoaded', function () {
+  const galleryModal = document.querySelector('[data-gallery-modal]');
+  const modalOverlay = document.querySelector('[data-modal-overlay]');
+  const modalCloseBtn = document.querySelector('[data-modal-close]');
+  const modalImage = document.querySelector('.gallery-modal-image');
+  const modalCaption = document.querySelector('.gallery-modal-caption');
+  const projectLinks = document.querySelectorAll('.project-link');
+
+  projectLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const img = this.querySelector('img');
+      const title = this.querySelector('.project-title').textContent;
+      const category = this.querySelector('.project-category').textContent;
+
+      modalImage.src = img.src;
+      modalImage.alt = img.alt;
+      modalCaption.textContent = title + ' - ' + category;
+      galleryModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeModal() {
+    galleryModal.classList.remove('active');
+    document.body.style.overflow = '';
   }
 
-}
+  modalOverlay.addEventListener('click', closeModal);
+  modalCloseBtn.addEventListener('click', closeModal);
 
-// add event in all filter button items for large screen
-let lastClickedBtn = filterBtn[0];
-
-for (let i = 0; i < filterBtn.length; i++) {
-
-  filterBtn[i].addEventListener("click", function () {
-
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    filterFunc(selectedValue);
-
-    lastClickedBtn.classList.remove("active");
-    this.classList.add("active");
-    lastClickedBtn = this;
-
-  });
-
-}
-
-
-
-// contact form variables
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
-
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
-
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && galleryModal.classList.contains('active')) {
+      closeModal();
     }
-
   });
-}
 
-
-
-// page navigation variables
-const navigationLinks = document.querySelectorAll("[data-nav-link]");
-const pages = document.querySelectorAll("[data-page]");
-
-// add event to all nav link
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
-
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
+  // Scroll reveal animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
       }
-    }
+    });
+  }, { threshold: 0.1 });
 
+  document.querySelectorAll('.service-card, .skill-item, .info-card, .resume-block, .project-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
   });
-}
+});
+
+// Add revealed style
+document.head.insertAdjacentHTML('beforeend', `
+  <style>
+    .revealed {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+  </style>
+`);

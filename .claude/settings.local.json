@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.wix.com)",
+      "WebFetch(domain:editor.wix.com)",
+      "WebSearch"
+    ]
+  }
+}
