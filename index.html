@@ -35,6 +35,8 @@
 
 <body>
 
+  <canvas id="bg-canvas"></canvas>
+
   <!-- NAVBAR -->
   <header class="header" id="header">
     <nav class="nav container">
@@ -921,6 +923,11 @@
 
   </main>
 
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </button>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-content">
@@ -960,7 +967,15 @@
     const label = now.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
     document.querySelectorAll('.current-date').forEach(el => el.textContent = label);
     document.getElementById('current-year').textContent = now.getFullYear();
+
+    const scrollTopBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
+    }, { passive: true });
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="./assets/js/bg3d.js"></script>
   <script src="./assets/js/script.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
