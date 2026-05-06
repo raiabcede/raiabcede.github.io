@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.service-card, .skill-item, .info-card, .resume-block, .project-card').forEach(el => {
+  document.querySelectorAll('.service-card, .skill-item, .process-step, .resume-block, .project-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';

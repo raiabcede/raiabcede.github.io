@@ -3,7 +3,14 @@
     "allow": [
       "WebFetch(domain:www.wix.com)",
       "WebFetch(domain:editor.wix.com)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(curl -sL -o \"C:/laragon/www/raiabcede.github.io/assets/images/skills/n8n.png\" \"https://cdn.simpleicons.org/n8n/FF6D5A\" && echo \"n8n done\")",
+      "Bash(curl -sL -o \"C:/laragon/www/raiabcede.github.io/assets/images/skills/zapier.png\" \"https://cdn.simpleicons.org/zapier/FF4A00\" && echo \"zapier done\")",
+      "Bash(curl -sL -o \"C:/laragon/www/raiabcede.github.io/assets/images/skills/shopify.png\" \"https://cdn.simpleicons.org/shopify/7AB55C\" && echo \"shopify done\")",
+      "Bash(curl -sL -o \"C:/laragon/www/raiabcede.github.io/assets/images/skills/gamemaker.png\" \"https://cdn.simpleicons.org/gamemaker/8BC34A\" && echo \"gamemaker done\")",
+      "Bash(curl -sL -o \"C:/laragon/www/raiabcede.github.io/assets/images/skills/blender.png\" \"https://cdn.simpleicons.org/blender/E87D0D\" && echo \"blender done\")",
+      "Bash(curl -sL -o \"C:/laragon/www/raiabcede.github.io/assets/images/skills/unity.png\" \"https://cdn.simpleicons.org/unity/FFFFFF\" && echo \"unity done\")",
+      "Bash(cd \"C:/laragon/www/raiabcede.github.io/assets/images/skills/\" && for f in n8n zapier shopify gamemaker blender unity; do mv \"$f.png\" \"$f.svg\"; done && echo \"renamed\")"
     ]
   }
 }

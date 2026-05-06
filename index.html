@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ryan Abcede</title>
+  <title>Ryan Abcede - Web Developer | Build Your Website, App, or Custom System</title>
+  <meta name="description" content="Got a project idea? I build custom websites, web apps, mobile apps, and software systems. From concept to launch, let's bring your vision to life.">
 
   <!-- favicon -->
   <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-icon-57x57.png">
@@ -42,10 +43,10 @@
     <nav class="nav container">
       <a href="#hero" class="nav-logo"><img src="./assets/images/favicons/ms-icon-310x310.png" alt="Ryan Abcede" width="32"></a>
       <ul class="nav-list">
-        <li><a href="#about" class="nav-link active" data-nav-link>About</a></li>
-        <li><a href="#services" class="nav-link" data-nav-link>Services</a></li>
-        <li><a href="#resume" class="nav-link" data-nav-link>Resume</a></li>
+        <li><a href="#services" class="nav-link active" data-nav-link>Services</a></li>
+        <li><a href="#how-it-works" class="nav-link" data-nav-link>How It Works</a></li>
         <li><a href="#portfolio" class="nav-link" data-nav-link>Portfolio</a></li>
+        <li><a href="#resume" class="nav-link" data-nav-link>Resume</a></li>
         <li><a href="#contact" class="nav-link" data-nav-link>Contact</a></li>
       </ul>
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
@@ -62,22 +63,30 @@
     <section class="hero" id="hero">
       <div class="hero-container container">
         <div class="hero-content">
-          <p class="hero-greeting">Hello, I'm</p>
-          <h1 class="hero-name">Ryan Abcede</h1>
-          <p class="hero-title">Web Developer & Graphic Designer</p>
+          <p class="hero-greeting">Got a project idea?</p>
+          <h1 class="hero-name">Let's Build It<br>Together</h1>
+          <p class="hero-title">Websites &bull; Apps &bull; Custom Systems</p>
           <p class="hero-description">
-            I build robust web solutions and craft compelling visual designs that blend functionality with creativity.
+            From concept to launch &mdash; I help businesses and entrepreneurs turn their ideas into fully functional websites, mobile apps, and custom software solutions.
           </p>
           <div class="hero-actions">
-            <a href="#portfolio" class="btn btn-primary">View My Work</a>
-            <a href="#contact" class="btn btn-outline">Get In Touch</a>
+            <a href="#contact" class="btn btn-primary">Start Your Project <ion-icon name="arrow-forward-outline"></ion-icon></a>
+            <a href="#portfolio" class="btn btn-outline">View My Work</a>
           </div>
-          <ul class="hero-social">
-            <li><a href="https://www.facebook.com/raiddto/" target="_blank" title="Facebook"><ion-icon name="logo-facebook"></ion-icon></a></li>
-            <li><a href="https://play.google.com/store/apps/dev?id=4738230515580449277" target="_blank" title="Google Play Store"><ion-icon name="logo-google-playstore"></ion-icon></a></li>
-            <li><a href="https://www.onlinejobs.ph/jobseekers/info/683689" target="_blank" title="OnlineJobs.ph"><ion-icon name="earth-outline"></ion-icon></a></li>
-            <li><a href="https://www.linkedin.com/in/ryan-abcede-a054402bb/" target="_blank" title="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-          </ul>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-number" id="years-experience">8+</span>
+              <span class="hero-stat-label">Years Experience</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number">40+</span>
+              <span class="hero-stat-label">Projects Delivered</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number">20+</span>
+              <span class="hero-stat-label">Happy Clients</span>
+            </div>
+          </div>
         </div>
         <div class="hero-image">
           <div class="hero-avatar">
@@ -87,100 +96,74 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="section-subtitle-line"></div>
-        <div class="about-content">
-          <p>I'm a programmer in the Philippines, with experience in developing programs and websites since 2017. I find programming both fulfilling and exciting—it allows me to solve complex problems and design intuitive, user-friendly interfaces that make technology more accessible.</p>
-          <p>In addition to programming, I'm skilled in photo and video editing, which lets me express my creativity and enhance the visual impact of my projects. I'm always committed to improving my craft and delivering high-quality work that my clients and colleagues can take pride in.</p>
-          <p>
-            I develop apps for fun, including Google Chrome web extensions like
-            <a href="https://chromewebstore.google.com/detail/browser-locker/maolicpkidohgkhhbfcdbkfbfpahfhmc" target="_blank">Browser Locker</a>.<br>
-            I also founded
-            <a href="https://play.google.com/store/apps/dev?id=4738230515580449277" target="_blank">Lazy Corgi</a>,
-            where I develop and share Android apps on the Google Play Store, and <a href="https://hoana.cc/" target="_blank">Hoana</a>, a Homeowners Association Management System where homeowners can manage their community, and pay their dues online.
-          </p>
-        </div>
-
-        <!-- Contact Info Cards -->
-        <div class="info-cards">
-          <div class="info-card">
-            <div class="info-card-icon"><ion-icon name="mail-outline"></ion-icon></div>
-            <div class="info-card-content">
-              <span class="info-card-label">Email</span>
-              <a href="mailto:rai@abcede.dev">rai@abcede.dev</a>
-            </div>
-          </div>
-          <div class="info-card">
-            <div class="info-card-icon"><ion-icon name="phone-portrait-outline"></ion-icon></div>
-            <div class="info-card-content">
-              <span class="info-card-label">Phone</span>
-              <a href="tel:+639760023670">+63 976 0023 670</a>
-            </div>
-          </div>
-          <div class="info-card">
-            <div class="info-card-icon"><ion-icon name="calendar-outline"></ion-icon></div>
-            <div class="info-card-content">
-              <span class="info-card-label">Experience</span>
-              7+
-            </div>
-          </div>
-          <div class="info-card">
-            <div class="info-card-icon"><ion-icon name="location-outline"></ion-icon></div>
-            <div class="info-card-content">
-              <span class="info-card-label">Location</span>
-              <span>Cagayan de Oro City, Philippines</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- SERVICES -->
     <section class="section section-alt" id="services">
       <div class="container">
-        <h2 class="section-title">What I'm Doing</h2>
+        <h2 class="section-title">What I Can Build For You</h2>
         <div class="section-subtitle-line"></div>
         <div class="services-grid">
 
           <div class="service-card">
             <div class="service-icon">
-              <img src="./assets/images/icon-design.svg" alt="design icon" width="40">
+              <img src="./assets/images/icon-design.svg" alt="website icon" width="40">
             </div>
-            <h3 class="service-name">Web Design</h3>
-            <p class="service-desc">Passionate about creating visually stunning and user-friendly web designs that drive engagement and deliver exceptional user experiences.</p>
+            <h3 class="service-name">Custom Websites</h3>
+            <p class="service-desc">Business websites, landing pages, and e-commerce stores that look great and convert visitors into customers.</p>
+            <ul class="service-features">
+              <li>Responsive &amp; mobile-first</li>
+              <li>SEO-optimized</li>
+              <li>Fast loading speed</li>
+            </ul>
           </div>
 
           <div class="service-card">
             <div class="service-icon">
-              <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+              <img src="./assets/images/icon-dev.svg" alt="web app icon" width="40">
             </div>
-            <h3 class="service-name">Web Development</h3>
-            <p class="service-desc">Dedicated to building robust and efficient web solutions that blend seamless functionality with intuitive user interfaces.</p>
+            <h3 class="service-name">Web Applications</h3>
+            <p class="service-desc">SaaS platforms, dashboards, management systems, and booking portals tailored to your business needs.</p>
+            <ul class="service-features">
+              <li>Custom admin panels</li>
+              <li>User authentication</li>
+              <li>Database &amp; API integrations</li>
+            </ul>
           </div>
 
           <div class="service-card">
             <div class="service-icon">
               <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
             </div>
-            <h3 class="service-name">Mobile App Development</h3>
-            <p class="service-desc">I make high-quality mobile apps for Android.</p>
+            <h3 class="service-name">Mobile Apps</h3>
+            <p class="service-desc">Android applications built with Flutter &mdash; from utility apps to full-featured mobile platforms.</p>
+            <ul class="service-features">
+              <li>Native Android performance</li>
+              <li>Play Store deployment</li>
+              <li>Push notifications &amp; offline support</li>
+            </ul>
           </div>
 
           <div class="service-card">
             <div class="service-icon">
-              <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
+              <img src="./assets/images/icon-photo.svg" alt="custom system icon" width="40">
             </div>
-            <h3 class="service-name">Graphics Design</h3>
-            <p class="service-desc">Creating impactful and visually appealing designs that effectively communicate your brand's message.</p>
+            <h3 class="service-name">Custom Systems</h3>
+            <p class="service-desc">Internal tools, automation workflows, browser extensions, and integrations to streamline your operations.</p>
+            <ul class="service-features">
+              <li>Workflow automation</li>
+              <li>Third-party integrations</li>
+              <li>Chrome extensions &amp; desktop tools</li>
+            </ul>
           </div>
 
         </div>
 
+        <div class="services-cta">
+          <p>Not sure what you need? Let's talk about your idea and figure it out together.</p>
+          <a href="#contact" class="btn btn-primary">Get a Free Consultation <ion-icon name="arrow-forward-outline"></ion-icon></a>
+        </div>
+
         <!-- Skills -->
-        <h2 class="section-title" style="margin-top: 60px;">Skills & Technologies</h2>
+        <h2 class="section-title" style="margin-top: 60px;">Technologies I Use</h2>
         <div class="section-subtitle-line"></div>
         <div class="skills-grid">
           <div class="skill-item"><img src="assets/images/skills/php.png" alt="PHP" title="PHP"></div>
@@ -203,129 +186,45 @@
           <div class="skill-item"><img src="assets/images/skills/aws.png" alt="AWS" title="AWS"></div>
           <div class="skill-item"><img src="assets/images/skills/cloudflare.png" alt="Cloudflare" title="Cloudflare"></div>
           <div class="skill-item"><img src="assets/images/skills/python.png" alt="Python" title="Python"></div>
+          <div class="skill-item"><img src="assets/images/skills/n8n.svg" alt="n8n" title="n8n"></div>
+          <div class="skill-item"><img src="assets/images/skills/zapier.svg" alt="Zapier" title="Zapier"></div>
+          <div class="skill-item"><img src="assets/images/skills/shopify.svg" alt="Shopify" title="Shopify"></div>
+          <div class="skill-item"><img src="assets/images/skills/gamemaker.svg" alt="Game Maker Studio" title="Game Maker Studio"></div>
+          <div class="skill-item"><img src="assets/images/skills/blender.svg" alt="Blender" title="Blender"></div>
+          <div class="skill-item"><img src="assets/images/skills/unity.svg" alt="Unity" title="Unity"></div>
         </div>
       </div>
     </section>
 
-    <!-- RESUME -->
-    <section class="section" id="resume">
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how-it-works">
       <div class="container">
-        <h2 class="section-title">Resume</h2>
+        <h2 class="section-title">How It Works</h2>
         <div class="section-subtitle-line"></div>
+        <div class="process-grid">
 
-        <div class="resume-grid">
-
-          <!-- Left Column -->
-          <div class="resume-col">
-
-            <div class="resume-block">
-              <h3 class="resume-block-title">
-                <ion-icon name="book-outline"></ion-icon> Education
-              </h3>
-              <div class="timeline">
-                <div class="timeline-item">
-                  <h4 class="timeline-title">Computer Science — Ateneo de Cagayan | Xavier University, Cagayan de Oro</h4>
-                  <span class="timeline-date">2009 — 2015</span>
-                  <p class="timeline-text">During my college journey, I embraced the roles of a dedicated student and a graphic artist student assistant in Museo de Oro. Balancing these pursuits, I wove a narrative of academic achievement and creative exploration, enriching my learning experience while contributing my design talents to the campus community.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="resume-block">
-              <h3 class="resume-block-title">
-                <ion-icon name="footsteps-outline"></ion-icon> Internships
-              </h3>
-              <div class="timeline">
-                <div class="timeline-item">
-                  <h4 class="timeline-title">Software Developer — Department of Science and Technology</h4>
-                  <span class="timeline-date">March 2014 — May 2014</span>
-                  <p class="timeline-text">At DOST, our intern team crafted an advanced Document Management System, revolutionizing workflows into an efficient, paperless setup. This innovative solution ensures seamless access, organization, and security for vital information, achieved through cutting-edge technology to streamline administrative processes and promote sustainability.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="resume-block">
-              <h3 class="resume-block-title">
-                <ion-icon name="ribbon-outline"></ion-icon> Certifications
-              </h3>
-              <div class="timeline">
-                <div class="timeline-item">
-                  <h4 class="timeline-title">Flutter and Dart — Udemy</h4>
-                  <span class="timeline-date">July 2023 — August 2023</span>
-                </div>
-                <div class="timeline-item">
-                  <h4 class="timeline-title">Web Development for Web developers — DICT</h4>
-                  <span class="timeline-date">March 2023</span>
-                </div>
-                <div class="timeline-item">
-                  <h4 class="timeline-title">Web Accessibility Audit — DICT</h4>
-                  <span class="timeline-date">March 2023</span>
-                </div>
-              </div>
-            </div>
-
+          <div class="process-step">
+            <div class="process-number">01</div>
+            <h3 class="process-title">Consult</h3>
+            <p class="process-desc">Tell me about your idea. We'll discuss your goals, target audience, features, and timeline to create a clear project plan.</p>
           </div>
 
-          <!-- Right Column -->
-          <div class="resume-col">
+          <div class="process-step">
+            <div class="process-number">02</div>
+            <h3 class="process-title">Design</h3>
+            <p class="process-desc">I'll create mockups and prototypes so you can see exactly how your project will look and feel before any code is written.</p>
+          </div>
 
-            <div class="resume-block">
-              <h3 class="resume-block-title">
-                <ion-icon name="rocket-outline"></ion-icon> Experience
-              </h3>
-              <div class="timeline">
+          <div class="process-step">
+            <div class="process-number">03</div>
+            <h3 class="process-title">Build</h3>
+            <p class="process-desc">Your project comes to life with clean, scalable code. You'll get regular updates and can review progress throughout.</p>
+          </div>
 
-                <div class="timeline-item">
-                  <h4 class="timeline-title">Technical Support — Propel Commerce</h4>
-                  <span class="timeline-date">November 2024 — <span class="current-date"></span></span>
-                  <p class="timeline-text">I provide technical support to merchants and customers of Propel Commerce, including troubleshooting, debugging, and resolving issues related to the our applications for Shopify.</p>
-                </div>
-
-                <div class="timeline-item">
-                  <h4 class="timeline-title">Software Developer — Kvell.net</h4>
-                  <span class="timeline-date">March 2023 — <span class="current-date"></span></span>
-                  <p class="timeline-text">I develop websites, automation, graphic design, and other IT-related tasks for clients.</p>
-                </div>
-
-                <div class="timeline-item">
-                  <h4 class="timeline-title">Computer Programmer II — Provincial Engineering Office Misamis Oriental</h4>
-                  <span class="timeline-date">September 2020 — <span class="current-date"></span></span>
-                  <p class="timeline-text">I work as a programmer, developing and maintaining all agency systems and servers. I also handle most IT-related tasks, including server maintenance, printer troubleshooting, and even phone-related issues.</p>
-                </div>
-
-                <div class="timeline-item">
-                  <h4 class="timeline-title">Game Developer — Cinnabar Games</h4>
-                  <span class="timeline-date">October 2023 — April 2024</span>
-                  <p class="timeline-text">I created Android games with Game Maker Studio, now accessible on the Google Play Store.</p>
-                </div>
-
-                <div class="timeline-item">
-                  <h4 class="timeline-title">Part-time Web Developer — WebPagesThatSell.com</h4>
-                  <span class="timeline-date">July 2020 — February 2024</span>
-                  <p class="timeline-text">Managed various websites, implementing client-requested features and ensuring security through regular backups and threat assessments on a weekly basis.</p>
-                </div>
-
-                <div class="timeline-item">
-                  <h4 class="timeline-title">Junior Programmer — PhIIRE Corp.</h4>
-                  <span class="timeline-date">June 2018 — September 2020</span>
-                  <p class="timeline-text">I have been in charge of improving and maintaining Phiire Corporations' websites. Their strong business sense and unwavering dedication have greatly helped our real estate projects in the changing US market.</p>
-                </div>
-
-                <div class="timeline-item">
-                  <h4 class="timeline-title">Web Developer — Cue Softwares</h4>
-                  <span class="timeline-date">April 2016 — June 2018</span>
-                  <p class="timeline-text">I have managed and improved the Compass Booking website, streamlining ski cabin and equipment reservations via Stripe. Its intuitive interface provides quick registration, convenient access to a variety of choices, and effortless booking.</p>
-                </div>
-
-                <div class="timeline-item">
-                  <h4 class="timeline-title">Student Assistant Graphic Artist — Museo de Oro | Xavier University</h4>
-                  <span class="timeline-date">June 2014 — March 2016</span>
-                  <p class="timeline-text">While studying, I balanced work and academics, designing posters, and brochures, and even crafting a digital font for the museum and theater.</p>
-                </div>
-
-              </div>
-            </div>
-
+          <div class="process-step">
+            <div class="process-number">04</div>
+            <h3 class="process-title">Launch</h3>
+            <p class="process-desc">After testing and your final approval, we go live. I also provide post-launch support to ensure everything runs smoothly.</p>
           </div>
 
         </div>
@@ -1040,19 +939,216 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="section" id="contact">
+    <!-- RESUME -->
+    <section class="section" id="resume">
       <div class="container">
-        <h2 class="section-title">Get In Touch</h2>
+        <h2 class="section-title">Resume</h2>
         <div class="section-subtitle-line"></div>
-        <p class="contact-text">Feel free to reach out for collaborations, freelance work, or just to say hello.</p>
-        <div class="contact-actions">
-          <a href="mailto:rai@abcede.dev" class="btn btn-primary">
-            <ion-icon name="mail-outline"></ion-icon> Send Email
-          </a>
-          <a href="tel:+639760023670" class="btn btn-outline">
-            <ion-icon name="call-outline"></ion-icon> Call Me
-          </a>
+
+        <div class="resume-grid">
+
+          <!-- Left Column -->
+          <div class="resume-col">
+
+            <div class="resume-block">
+              <h3 class="resume-block-title">
+                <ion-icon name="book-outline"></ion-icon> Education
+              </h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Computer Science — Ateneo de Cagayan | Xavier University, Cagayan de Oro</h4>
+                  <span class="timeline-date">2009 — 2015</span>
+                  <p class="timeline-text">During my college journey, I embraced the roles of a dedicated student and a graphic artist student assistant in Museo de Oro. Balancing these pursuits, I wove a narrative of academic achievement and creative exploration, enriching my learning experience while contributing my design talents to the campus community.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="resume-block">
+              <h3 class="resume-block-title">
+                <ion-icon name="footsteps-outline"></ion-icon> Internships
+              </h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Software Developer — Department of Science and Technology</h4>
+                  <span class="timeline-date">March 2014 — May 2014</span>
+                  <p class="timeline-text">At DOST, our intern team crafted an advanced Document Management System, revolutionizing workflows into an efficient, paperless setup. This innovative solution ensures seamless access, organization, and security for vital information, achieved through cutting-edge technology to streamline administrative processes and promote sustainability.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="resume-block">
+              <h3 class="resume-block-title">
+                <ion-icon name="ribbon-outline"></ion-icon> Certifications
+              </h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Flutter and Dart — Udemy</h4>
+                  <span class="timeline-date">July 2023 — August 2023</span>
+                </div>
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Web Development for Web developers — DICT</h4>
+                  <span class="timeline-date">March 2023</span>
+                </div>
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Web Accessibility Audit — DICT</h4>
+                  <span class="timeline-date">March 2023</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column -->
+          <div class="resume-col">
+
+            <div class="resume-block">
+              <h3 class="resume-block-title">
+                <ion-icon name="rocket-outline"></ion-icon> Experience
+              </h3>
+              <div class="timeline">
+
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Technical Support — Propel Commerce</h4>
+                  <span class="timeline-date">November 2024 — <span class="current-date"></span></span>
+                  <p class="timeline-text">I provide technical support to merchants and customers of Propel Commerce, including troubleshooting, debugging, and resolving issues related to the our applications for Shopify.</p>
+                </div>
+
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Software Developer — Kvell.net</h4>
+                  <span class="timeline-date">March 2023 — <span class="current-date"></span></span>
+                  <p class="timeline-text">I develop websites, automation, graphic design, and other IT-related tasks for clients.</p>
+                </div>
+
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Computer Programmer II — Provincial Engineering Office Misamis Oriental</h4>
+                  <span class="timeline-date">September 2020 — <span class="current-date"></span></span>
+                  <p class="timeline-text">I work as a programmer, developing and maintaining all agency systems and servers. I also handle most IT-related tasks, including server maintenance, printer troubleshooting, and even phone-related issues.</p>
+                </div>
+
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Game Developer — Cinnabar Games</h4>
+                  <span class="timeline-date">October 2023 — April 2024</span>
+                  <p class="timeline-text">I created Android games with Game Maker Studio, now accessible on the Google Play Store.</p>
+                </div>
+
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Part-time Web Developer — WebPagesThatSell.com</h4>
+                  <span class="timeline-date">July 2020 — February 2024</span>
+                  <p class="timeline-text">Managed various websites, implementing client-requested features and ensuring security through regular backups and threat assessments on a weekly basis.</p>
+                </div>
+
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Junior Programmer — PhIIRE Corp.</h4>
+                  <span class="timeline-date">June 2018 — September 2020</span>
+                  <p class="timeline-text">I have been in charge of improving and maintaining Phiire Corporations' websites. Their strong business sense and unwavering dedication have greatly helped our real estate projects in the changing US market.</p>
+                </div>
+
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Web Developer — Cue Softwares</h4>
+                  <span class="timeline-date">April 2016 — June 2018</span>
+                  <p class="timeline-text">I have managed and improved the Compass Booking website, streamlining ski cabin and equipment reservations via Stripe. Its intuitive interface provides quick registration, convenient access to a variety of choices, and effortless booking.</p>
+                </div>
+
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Student Assistant Graphic Artist — Museo de Oro | Xavier University</h4>
+                  <span class="timeline-date">June 2014 — March 2016</span>
+                  <p class="timeline-text">While studying, I balanced work and academics, designing posters, and brochures, and even crafting a digital font for the museum and theater.</p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / LEAD FORM -->
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <div class="contact-layout">
+          <div class="contact-info-col">
+            <h2 class="section-title">Start Your Project</h2>
+            <div class="section-subtitle-line"></div>
+            <p class="contact-lead-text">Have an idea for a website, app, or custom system? Tell me about it and I'll get back to you within 24 hours with a free consultation.</p>
+
+            <div class="contact-details">
+              <div class="contact-detail-item">
+                <ion-icon name="mail-outline"></ion-icon>
+                <div>
+                  <span class="contact-detail-label">Email</span>
+                  <a href="mailto:rai@abcede.dev">rai@abcede.dev</a>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <ion-icon name="call-outline"></ion-icon>
+                <div>
+                  <span class="contact-detail-label">Phone</span>
+                  <a href="tel:+639760023670">+63 976 0023 670</a>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <ion-icon name="location-outline"></ion-icon>
+                <div>
+                  <span class="contact-detail-label">Location</span>
+                  <span>Cagayan de Oro City, Philippines</span>
+                </div>
+              </div>
+            </div>
+
+            <ul class="contact-social">
+              <li><a href="https://www.facebook.com/raiddto/" target="_blank" title="Facebook"><ion-icon name="logo-facebook"></ion-icon></a></li>
+              <li><a href="https://play.google.com/store/apps/dev?id=4738230515580449277" target="_blank" title="Google Play Store"><ion-icon name="logo-google-playstore"></ion-icon></a></li>
+              <li><a href="https://www.onlinejobs.ph/jobseekers/info/683689" target="_blank" title="OnlineJobs.ph"><ion-icon name="earth-outline"></ion-icon></a></li>
+              <li><a href="https://www.linkedin.com/in/ryan-abcede-a054402bb/" target="_blank" title="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            </ul>
+          </div>
+
+          <div class="contact-form-col">
+            <form class="lead-form" id="leadForm">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required placeholder="Juan Dela Cruz">
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="juan@example.com">
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="project-type">Project Type</label>
+                  <select id="project-type" name="project-type" required>
+                    <option value="" disabled selected>Select a type</option>
+                    <option value="Website">Website</option>
+                    <option value="Web Application">Web Application</option>
+                    <option value="Mobile App">Mobile App</option>
+                    <option value="Custom System">Custom System</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="budget">Estimated Budget</label>
+                  <select id="budget" name="budget">
+                    <option value="" disabled selected>Select range</option>
+                    <option value="Under ₱10,000">Under ₱10,000</option>
+                    <option value="₱10,000 - ₱25,000">₱10,000 - ₱25,000</option>
+                    <option value="₱25,000 - ₱50,000">₱25,000 - ₱50,000</option>
+                    <option value="₱50,000 - ₱100,000">₱50,000 - ₱100,000</option>
+                    <option value="₱100,000+">₱100,000+</option>
+                    <option value="Not sure yet">Not sure yet</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message">Tell Me About Your Project</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Describe your idea, goals, features you need, timeline..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-submit">
+                <ion-icon name="send-outline"></ion-icon> Send Project Inquiry
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
@@ -1096,7 +1192,7 @@
 
   <script>
     const years = new Date().getFullYear() - 2016;
-    document.getElementById('years-experience').textContent = (years - 1) + '+ Years';
+    document.getElementById('years-experience').textContent = (years - 1) + '+';
   </script>
   <script>
     const now = new Date();
@@ -1109,6 +1205,74 @@
       scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
     }, { passive: true });
     scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Custom select dropdowns
+    document.querySelectorAll('.lead-form select').forEach(select => {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'custom-select';
+
+      const trigger = document.createElement('div');
+      trigger.className = 'custom-select-trigger placeholder';
+      const placeholder = select.querySelector('option[disabled][selected]');
+      trigger.textContent = placeholder ? placeholder.textContent : '';
+
+      const optionsList = document.createElement('div');
+      optionsList.className = 'custom-select-options';
+
+      select.querySelectorAll('option:not([disabled])').forEach(option => {
+        const item = document.createElement('div');
+        item.className = 'custom-select-option';
+        item.textContent = option.textContent;
+        item.dataset.value = option.value;
+        item.addEventListener('click', () => {
+          select.value = option.value;
+          trigger.textContent = option.textContent;
+          trigger.classList.remove('placeholder');
+          optionsList.querySelectorAll('.custom-select-option').forEach(o => o.classList.remove('selected'));
+          item.classList.add('selected');
+          wrapper.classList.remove('open');
+        });
+        optionsList.appendChild(item);
+      });
+
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        document.querySelectorAll('.custom-select.open').forEach(s => {
+          if (s !== wrapper) s.classList.remove('open');
+        });
+        wrapper.classList.toggle('open');
+      });
+
+      select.parentNode.insertBefore(wrapper, select);
+      wrapper.appendChild(select);
+      wrapper.appendChild(trigger);
+      wrapper.appendChild(optionsList);
+    });
+
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.custom-select.open').forEach(s => s.classList.remove('open'));
+    });
+
+    // Lead form - mailto fallback
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const projectType = document.getElementById('project-type').value;
+      const budget = document.getElementById('budget').value || 'Not specified';
+      const message = document.getElementById('message').value;
+
+      const subject = encodeURIComponent('Project Inquiry: ' + projectType + ' - ' + name);
+      const body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n' +
+        'Project Type: ' + projectType + '\n' +
+        'Budget: ' + budget + '\n\n' +
+        'Project Details:\n' + message
+      );
+
+      window.location.href = 'mailto:rai@abcede.dev?subject=' + subject + '&body=' + body;
+    });
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="./assets/js/bg3d.js"></script>
