@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ryan Abcede - Portfolio</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/images/favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/images/favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#0d0d0d">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- NAVBAR -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#hero" class="nav-logo"><img src="./assets/images/favicons/ms-icon-310x310.png" alt="Ryan Abcede" width="32"></a>
+      <ul class="nav-list">
+        <li><a href="#about" class="nav-link active" data-nav-link>About</a></li>
+        <li><a href="#skills" class="nav-link" data-nav-link>Skills</a></li>
+        <li><a href="#portfolio" class="nav-link" data-nav-link>Portfolio</a></li>
+        <li><a href="#resume" class="nav-link" data-nav-link>Resume</a></li>
+        <li><a href="#contact" class="nav-link" data-nav-link>Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-container container">
+        <div class="hero-content">
+          <p class="hero-greeting">Hello, I'm</p>
+          <h1 class="hero-name">Ryan<br>Abcede</h1>
+          <p class="hero-title">Full-Stack Developer &bull; Software Engineer</p>
+          <p class="hero-description">
+            A passionate and versatile developer with <span id="years-exp">8+</span> years of experience building websites, web applications, mobile apps, and custom software solutions.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Get In Touch <ion-icon name="arrow-forward-outline"></ion-icon></a>
+            <a href="#portfolio" class="btn btn-outline">See My Work</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-number" id="years-experience">8+</span>
+              <span class="hero-stat-label">Years Experience</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number">40+</span>
+              <span class="hero-stat-label">Projects Delivered</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number">20+</span>
+              <span class="hero-stat-label">Happy Clients</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-avatar">
+            <img src="./assets/images/my-avatar.png" alt="Ryan Abcede" width="280">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section section-alt" id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="section-subtitle-line"></div>
+        <div class="about-content">
+          <p>Hi, I'm a full-stack developer with <span id="years-about">7</span>+ years of experience building SaaS platforms, dashboards, WordPress sites, and browser-based tools using PHP, JavaScript, Python, and modern backend systems. I handle both frontend and backend development, including API integrations and automation workflows.</p>
+          <p>I also cover SEO, QA, and basic photo/video editing as part of the development process, helping ensure clean structure, fast performance, mobile responsiveness, and well-presented content across projects.</p>
+          <p>I've been building and shipping production systems even before AI-assisted workflows became common, and now I use AI tools like Cursor and Claude Code to improve speed and efficiency, backed by a strong foundation in writing and understanding code.</p>
+          <p>I'd be glad to contribute and bring value to your team.</p>
+        </div>
+        <div class="info-cards">
+          <div class="info-card">
+            <div class="info-card-icon"><ion-icon name="mail-outline"></ion-icon></div>
+            <div class="info-card-content">
+              <span class="info-card-label">Email</span>
+              <a href="mailto:rai@abcede.dev">rai@abcede.dev</a>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon"><ion-icon name="call-outline"></ion-icon></div>
+            <div class="info-card-content">
+              <span class="info-card-label">Phone</span>
+              <a href="tel:+639760023670">+63 976 0023 670</a>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon"><ion-icon name="location-outline"></ion-icon></div>
+            <div class="info-card-content">
+              <span class="info-card-label">Location</span>
+              <span>Cagayan de Oro City, Philippines</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon"><ion-icon name="globe-outline"></ion-icon></div>
+            <div class="info-card-content">
+              <span class="info-card-label">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/ryan-abcede-a054402bb/" target="_blank">ryan-abcede</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="section-subtitle-line"></div>
+
+        <div class="skills-category">
+          <h3 class="skills-cat-title">Programming Languages</h3>
+          <div class="skills-tags">
+            <span class="skill-tag">PHP</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Dart</span>
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">GML (GameMaker)</span>
+            <span class="skill-tag">C# (Unity)</span>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3 class="skills-cat-title">Frameworks & Libraries</h3>
+          <div class="skills-tags">
+            <span class="skill-tag">Laravel</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Flutter</span>
+            <span class="skill-tag">Electron</span>
+            <span class="skill-tag">WordPress</span>
+            <span class="skill-tag">Shopify</span>
+            <span class="skill-tag">jQuery</span>
+            <span class="skill-tag">Bootstrap</span>
+            <span class="skill-tag">Tailwind CSS</span>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3 class="skills-cat-title">Tools & Platforms</h3>
+          <div class="skills-tags">
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Nginx</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Cloudflare</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Linux Server Admin</span>
+            <span class="skill-tag">n8n</span>
+            <span class="skill-tag">Zapier</span>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3 class="skills-cat-title">Design & Creative</h3>
+          <div class="skills-tags">
+            <span class="skill-tag">Adobe Photoshop</span>
+            <span class="skill-tag">Adobe Illustrator</span>
+            <span class="skill-tag">Adobe After Effects</span>
+            <span class="skill-tag">Canva</span>
+            <span class="skill-tag">CapCut</span>
+            <span class="skill-tag">Blender</span>
+            <span class="skill-tag">UI/UX Design</span>
+          </div>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 60px;">Technologies</h2>
+        <div class="section-subtitle-line"></div>
+        <div class="skills-grid">
+          <div class="skill-item"><img src="assets/images/skills/php.png" alt="PHP" title="PHP"></div>
+          <div class="skill-item"><img src="assets/images/skills/js.png" alt="JavaScript" title="JavaScript"></div>
+          <div class="skill-item"><img src="assets/images/skills/laravel.png" alt="Laravel" title="Laravel"></div>
+          <div class="skill-item"><img src="assets/images/skills/wp.png" alt="WordPress" title="WordPress"></div>
+          <div class="skill-item"><img src="assets/images/skills/flutter.png" alt="Flutter" title="Flutter"></div>
+          <div class="skill-item"><img src="assets/images/skills/css3.png" alt="CSS3" title="CSS3"></div>
+          <div class="skill-item"><img src="assets/images/skills/html5.png" alt="HTML5" title="HTML5"></div>
+          <div class="skill-item"><img src="assets/images/skills/photoshop.png" alt="Adobe Photoshop" title="Adobe Photoshop"></div>
+          <div class="skill-item"><img src="assets/images/skills/after-effects.png" alt="Adobe After Effects" title="Adobe After Effects"></div>
+          <div class="skill-item"><img src="assets/images/skills/illustrator.png" alt="Adobe Illustrator" title="Adobe Illustrator"></div>
+          <div class="skill-item"><img src="assets/images/skills/canva.png" alt="Canva" title="Canva"></div>
+          <div class="skill-item"><img src="assets/images/skills/capcut.png" alt="CapCut" title="CapCut"></div>
+          <div class="skill-item"><img src="assets/images/skills/docker.png" alt="Docker" title="Docker"></div>
+          <div class="skill-item"><img src="assets/images/skills/mysql.png" alt="MySQL" title="MySQL"></div>
+          <div class="skill-item"><img src="assets/images/skills/electron.png" alt="Electron" title="Electron"></div>
+          <div class="skill-item"><img src="assets/images/skills/nginx.png" alt="Nginx" title="Nginx"></div>
+          <div class="skill-item"><img src="assets/images/skills/nodejs.png" alt="Node.js" title="Node.js"></div>
+          <div class="skill-item"><img src="assets/images/skills/aws.png" alt="AWS" title="AWS"></div>
+          <div class="skill-item"><img src="assets/images/skills/cloudflare.png" alt="Cloudflare" title="Cloudflare"></div>
+          <div class="skill-item"><img src="assets/images/skills/python.png" alt="Python" title="Python"></div>
+          <div class="skill-item"><img src="assets/images/skills/n8n.svg" alt="n8n" title="n8n"></div>
+          <div class="skill-item"><img src="assets/images/skills/zapier.svg" alt="Zapier" title="Zapier"></div>
+          <div class="skill-item"><img src="assets/images/skills/shopify.svg" alt="Shopify" title="Shopify"></div>
+          <div class="skill-item"><img src="assets/images/skills/gamemaker.svg" alt="Game Maker Studio" title="Game Maker Studio"></div>
+          <div class="skill-item"><img src="assets/images/skills/blender.svg" alt="Blender" title="Blender"></div>
+          <div class="skill-item"><img src="assets/images/skills/unity.svg" alt="Unity" title="Unity"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="section section-alt" id="portfolio">
+      <div class="container">
+        <h2 class="section-title">Portfolio</h2>
+        <div class="section-subtitle-line"></div>
+
+        <ul class="filter-list">
+          <li><button class="filter-btn active" data-filter-btn>All</button></li>
+          <li><button class="filter-btn" data-filter-btn>Web design</button></li>
+          <li><button class="filter-btn" data-filter-btn>Web development</button></li>
+          <li><button class="filter-btn" data-filter-btn>Applications</button></li>
+          <li><button class="filter-btn" data-filter-btn>Graphic design</button></li>
+        </ul>
+
+        <div class="project-grid">
+
+          <div class="project-card active" data-filter-item data-category="applications">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/floscale.png" alt="Floscale AI" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Floscale AI</h3>
+                <p class="project-category">Applications</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="applications">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/siftin.png" alt="Siftin IO" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Siftin IO</h3>
+                <p class="project-category">Applications</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web development">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/hoana.png" alt="Hoana" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Hoana</h3>
+                <p class="project-category">Web development</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web development">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/impressionablekids.png" alt="Impressionable Kids" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Impressionable Kids</h3>
+                <p class="project-category">Web development</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="applications">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/browser-locker.png" alt="Browser Locker" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Browser Locker</h3>
+                <p class="project-category">Applications</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="applications">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/keylogger.png" alt="Browser Keylogger" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Browser Keylogger</h3>
+                <p class="project-category">Applications</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="applications">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/spottr.png" alt="Spottr" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Spottr</h3>
+                <p class="project-category">Applications</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/lyfe.jpg" alt="Lyfe" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Lyfe Marketing</h3>
+                <p class="project-category">Web design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web development">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/askbible.jpg" alt="Ask Bible" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Ask Bible .net</h3>
+                <p class="project-category">Web development</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/cash.jpg" alt="Cash" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Cash For Your House .co.za</h3>
+                <p class="project-category">Web design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web development">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/swift.png" alt="Swift" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Swift</h3>
+                <p class="project-category">Web development</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web development">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/aiscalerz.png" alt="AI Scalerz" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">AI Scalerz</h3>
+                <p class="project-category">Web development</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web development">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/daijun.png" alt="Daijun Consulting" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Daijun Consulting</h3>
+                <p class="project-category">Web development</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/enjoi.png" alt="Enjoi" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Enjoi</h3>
+                <p class="project-category">Web design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web development">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/growth.png" alt="GrowthMaximizer" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">GrowthMaximizer</h3>
+                <p class="project-category">Web development</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web development">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/sortitout.png" alt="Sort It Out" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Sort It Out</h3>
+                <p class="project-category">Web development</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web development">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/exit.jpg" alt="Exit" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Exit Maximizer .com</h3>
+                <p class="project-category">Web development</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="graphic design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/breesk.png" alt="Breesk" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Breesk</h3>
+                <p class="project-category">Graphic Design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="graphic design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/brewy.png" alt="Brewy" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Brewy</h3>
+                <p class="project-category">Graphic Design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="applications">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/csc.jpg" alt="Civil Service Reviewer" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Civil Service Reviewer</h3>
+                <p class="project-category">Applications</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="applications">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/cinnabar.jpg" alt="Cinnabar Games" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Cinnabar Games</h3>
+                <p class="project-category">Applications</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="applications">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/clickeys.png" alt="Clickeys" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Clickeys</h3>
+                <p class="project-category">Applications</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="applications">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/tagay.jpg" alt="Tagay Dares" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Tagay Dares</h3>
+                <p class="project-category">Applications</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="applications">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/peo.jpg" alt="PEO" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">PEO</h3>
+                <p class="project-category">Applications</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web development">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/free living.jpg" alt="Free Living" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Free Living Prop .co.za</h3>
+                <p class="project-category">Web development</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/kvell.jpg" alt="Kvell" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Kvell .net</h3>
+                <p class="project-category">Web design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web development">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/linkedconversion.jpg" alt="Linked Conversion" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Linked Conversions .com</h3>
+                <p class="project-category">Web development</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/njvr.jpg" alt="NJVR" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">NJVR Attorneys .co.za</h3>
+                <p class="project-category">Web design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web development">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/riverview.jpg" alt="Riverview" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Riverview Estates .com.au</h3>
+                <p class="project-category">Web development</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="graphic design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/kawasan.png" alt="Kawasan" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Kawasan</h3>
+                <p class="project-category">Graphic Design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="graphic design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/north.png" alt="North" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">North</h3>
+                <p class="project-category">Graphic Design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="graphic design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/permejo.png" alt="Permejo" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Permejo</h3>
+                <p class="project-category">Graphic Design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/easyvend.jpg" alt="Easy Vend" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Easy Vend</h3>
+                <p class="project-category">Web design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/medi.jpg" alt="Medi" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Mediterranean Foods .com.au</h3>
+                <p class="project-category">Web design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web development">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/cch.jpg" alt="CCH" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">CCH .care</h3>
+                <p class="project-category">Web development</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/dd.jpg" alt="DD" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">DD Milk Portal .com.au</h3>
+                <p class="project-category">Web design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/everclear.jpg" alt="Everclear" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Everclear Sprint water .com.au</h3>
+                <p class="project-category">Web design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/asiatic.jpg" alt="Asiatic" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Asiatic Importers .com.au</h3>
+                <p class="project-category">Web design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/milk plus.jpg" alt="Milk Plus" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Milk Plus More .com.au</h3>
+                <p class="project-category">Web design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web development">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/peninsula dairies.jpg" alt="Peninsula Dairies" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Peninsula Dairies .com.au</h3>
+                <p class="project-category">Web development</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/sms foods.jpg" alt="SMS Foods" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">SMS Foods .com.au</h3>
+                <p class="project-category">Web design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/city bread.jpg" alt="City Bread" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">City Bread .com.au</h3>
+                <p class="project-category">Web design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/mj nolan.jpg" alt="MJ Nolan" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">MJ Nolan .com.au</h3>
+                <p class="project-category">Web design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/federation dairy.jpg" alt="Federation Dairy" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Federation Dairy .com.au</h3>
+                <p class="project-category">Web design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/sydney bread.jpg" alt="Sydney Bread" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Sydney Bread .com.au</h3>
+                <p class="project-category">Web design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/top end.jpg" alt="Top End" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Top End Softdrinks .com.au</h3>
+                <p class="project-category">Web design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web development">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/tct.jpg" alt="TCT" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">TCTPas .com</h3>
+                <p class="project-category">Web development</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="web development">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/ausdum.jpg" alt="Ausdum" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Ausdum .com</h3>
+                <p class="project-category">Web development</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="graphic design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/fun.png" alt="Fun" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Fun Facts</h3>
+                <p class="project-category">Graphic Design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="graphic design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/ig.png" alt="IG" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">IG Slider</h3>
+                <p class="project-category">Graphic Design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="graphic design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/simple.png" alt="Simple" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">Simple</h3>
+                <p class="project-category">Graphic design</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-card active" data-filter-item data-category="graphic design">
+            <a href="#" class="project-link">
+              <figure class="project-thumb">
+                <img src="./assets/images/portfolio/snn.png" alt="SNN" loading="lazy">
+                <div class="project-overlay"><ion-icon name="eye-outline"></ion-icon></div>
+              </figure>
+              <div class="project-info">
+                <h3 class="project-title">SNN</h3>
+                <p class="project-category">Graphic design</p>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUME -->
+    <section class="section" id="resume">
+      <div class="container">
+        <h2 class="section-title">Resume</h2>
+        <div class="section-subtitle-line"></div>
+
+        <div class="resume-grid">
+
+          <!-- Left Column -->
+          <div class="resume-col">
+
+            <div class="resume-block">
+              <h3 class="resume-block-title">
+                <ion-icon name="book-outline"></ion-icon> Education
+              </h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Computer Science &mdash; Ateneo de Cagayan | Xavier University, Cagayan de Oro</h4>
+                  <span class="timeline-date">2009 &mdash; 2015</span>
+                  <p class="timeline-text">During my college journey, I embraced the roles of a dedicated student and a graphic artist student assistant in Museo de Oro. Balancing these pursuits, I wove a narrative of academic achievement and creative exploration, enriching my learning experience while contributing my design talents to the campus community.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="resume-block">
+              <h3 class="resume-block-title">
+                <ion-icon name="footsteps-outline"></ion-icon> Internships
+              </h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Software Developer &mdash; Department of Science and Technology</h4>
+                  <span class="timeline-date">March 2014 &mdash; May 2014</span>
+                  <p class="timeline-text">At DOST, our intern team crafted an advanced Document Management System, revolutionizing workflows into an efficient, paperless setup. This innovative solution ensures seamless access, organization, and security for vital information, achieved through cutting-edge technology to streamline administrative processes and promote sustainability.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="resume-block">
+              <h3 class="resume-block-title">
+                <ion-icon name="ribbon-outline"></ion-icon> Certifications
+              </h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Flutter and Dart &mdash; Udemy</h4>
+                  <span class="timeline-date">July 2023 &mdash; August 2023</span>
+                </div>
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Web Development for Web developers &mdash; DICT</h4>
+                  <span class="timeline-date">March 2023</span>
+                </div>
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Web Accessibility Audit &mdash; DICT</h4>
+                  <span class="timeline-date">March 2023</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column -->
+          <div class="resume-col">
+
+            <div class="resume-block">
+              <h3 class="resume-block-title">
+                <ion-icon name="rocket-outline"></ion-icon> Experience
+              </h3>
+              <div class="timeline">
+
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Technical Support &mdash; Propel Commerce</h4>
+                  <span class="timeline-date">November 2024 &mdash; <span class="current-date"></span></span>
+                  <p class="timeline-text">I provide technical support to merchants and customers of Propel Commerce, including troubleshooting, debugging, and resolving issues related to the our applications for Shopify.</p>
+                </div>
+
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Software Developer &mdash; Kvell.net</h4>
+                  <span class="timeline-date">March 2023 &mdash; <span class="current-date"></span></span>
+                  <p class="timeline-text">I develop websites, automation, graphic design, and other IT-related tasks for clients.</p>
+                </div>
+
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Computer Programmer II &mdash; Provincial Engineering Office Misamis Oriental</h4>
+                  <span class="timeline-date">September 2020 &mdash; <span class="current-date"></span></span>
+                  <p class="timeline-text">I work as a programmer, developing and maintaining all agency systems and servers. I also handle most IT-related tasks, including server maintenance, printer troubleshooting, and even phone-related issues.</p>
+                </div>
+
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Game Developer &mdash; Cinnabar Games</h4>
+                  <span class="timeline-date">October 2023 &mdash; April 2024</span>
+                  <p class="timeline-text">I created Android games with Game Maker Studio, now accessible on the Google Play Store.</p>
+                </div>
+
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Part-time Web Developer &mdash; WebPagesThatSell.com</h4>
+                  <span class="timeline-date">July 2020 &mdash; February 2024</span>
+                  <p class="timeline-text">Managed various websites, implementing client-requested features and ensuring security through regular backups and threat assessments on a weekly basis.</p>
+                </div>
+
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Junior Programmer &mdash; PhIIRE Corp.</h4>
+                  <span class="timeline-date">June 2018 &mdash; September 2020</span>
+                  <p class="timeline-text">I have been in charge of improving and maintaining Phiire Corporations' websites. Their strong business sense and unwavering dedication have greatly helped our real estate projects in the changing US market.</p>
+                </div>
+
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Web Developer &mdash; Cue Softwares</h4>
+                  <span class="timeline-date">April 2016 &mdash; June 2018</span>
+                  <p class="timeline-text">I have managed and improved the Compass Booking website, streamlining ski cabin and equipment reservations via Stripe. Its intuitive interface provides quick registration, convenient access to a variety of choices, and effortless booking.</p>
+                </div>
+
+                <div class="timeline-item">
+                  <h4 class="timeline-title">Student Assistant Graphic Artist &mdash; Museo de Oro | Xavier University</h4>
+                  <span class="timeline-date">June 2014 &mdash; March 2016</span>
+                  <p class="timeline-text">While studying, I balanced work and academics, designing posters, and brochures, and even crafting a digital font for the museum and theater.</p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="section-subtitle-line"></div>
+        <div class="info-cards">
+          <div class="info-card">
+            <div class="info-card-icon"><ion-icon name="mail-outline"></ion-icon></div>
+            <div class="info-card-content">
+              <span class="info-card-label">Email</span>
+              <a href="mailto:rai@abcede.dev">rai@abcede.dev</a>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon"><ion-icon name="call-outline"></ion-icon></div>
+            <div class="info-card-content">
+              <span class="info-card-label">Phone</span>
+              <a href="tel:+639760023670">+63 976 0023 670</a>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon"><ion-icon name="logo-linkedin"></ion-icon></div>
+            <div class="info-card-content">
+              <span class="info-card-label">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/ryan-abcede-a054402bb/" target="_blank">ryan-abcede</a>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon"><ion-icon name="logo-facebook"></ion-icon></div>
+            <div class="info-card-content">
+              <span class="info-card-label">Facebook</span>
+              <a href="https://www.facebook.com/raiddto/" target="_blank">raiddto</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <p>&copy; <span id="current-year"></span> Ryan Abcede. All rights reserved.</p>
+      </div>
+      <ul class="footer-social">
+        <li><a href="https://www.facebook.com/raiddto/" target="_blank" title="Facebook"><ion-icon name="logo-facebook"></ion-icon></a></li>
+        <li><a href="https://play.google.com/store/apps/dev?id=4738230515580449277" target="_blank" title="Google Play Store"><ion-icon name="logo-google-playstore"></ion-icon></a></li>
+        <li><a href="https://www.onlinejobs.ph/jobseekers/info/683689" target="_blank" title="OnlineJobs.ph"><ion-icon name="earth-outline"></ion-icon></a></li>
+        <li><a href="https://www.linkedin.com/in/ryan-abcede-a054402bb/" target="_blank" title="LinkedIn"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Gallery Modal -->
+  <div class="gallery-modal" data-gallery-modal>
+    <div class="gallery-modal-overlay" data-modal-overlay></div>
+    <div class="gallery-modal-content">
+      <button class="gallery-modal-close" data-modal-close>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+      <img src="" alt="Gallery Image" class="gallery-modal-image">
+      <div class="gallery-modal-caption"></div>
+    </div>
+  </div>
+
+  <script>
+    const years = new Date().getFullYear() - 2016;
+    const yrs = (years - 1) + '+';
+    document.getElementById('years-experience').textContent = yrs;
+    document.getElementById('years-exp').textContent = yrs;
+    document.getElementById('years-about').textContent = years - 1;
+  </script>
+  <script>
+    const now = new Date();
+    const label = now.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+    document.querySelectorAll('.current-date').forEach(el => el.textContent = label);
+    document.getElementById('current-year').textContent = now.getFullYear();
+    const scrollTopBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
+    }, { passive: true });
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="./assets/js/bg3d.js"></script>
+  <script src="./assets/js/script.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
