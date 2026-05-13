@@ -317,6 +317,16 @@ main, .footer {
   font-size: 16px;
   color: var(--white-50);
   max-width: 480px;
+}
+
+.hero-description a {
+  color: var(--accent-light);
+  text-decoration: underline;
+  transition: color var(--ease);
+}
+
+.hero-description a:hover {
+  color: var(--accent);
   margin-bottom: 36px;
   line-height: 1.8;
 }
