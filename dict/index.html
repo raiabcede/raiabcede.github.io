@@ -55,31 +55,37 @@
     .resume-main {
       position: relative;
       z-index: 1;
+      padding-top: 70px;
       padding-bottom: 80px;
     }
     .contact-strip {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 10px;
+      justify-content: center;
       margin-bottom: 48px;
-      padding: 20px 24px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
     }
     .contact-strip-item {
+      flex: 1 1 160px;
+      max-width: calc(25% - 8px);
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 0.85rem;
-      color: var(--white-70);
+      gap: 12px;
+      padding: 12px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      transition: border-color var(--ease), background var(--ease);
     }
-    .contact-strip-item ion-icon {
-      color: var(--accent);
-      font-size: 1rem;
-      flex-shrink: 0;
+    @media (max-width: 640px) {
+      .contact-strip-item { max-width: calc(50% - 5px); }
     }
-    .contact-strip-item a { color: var(--white-70); transition: color var(--ease); }
+    .contact-strip-item:hover { border-color: var(--accent); background: var(--bg-tertiary); }
+    .contact-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(227,36,43,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-icon ion-icon { color: var(--accent); font-size: 1.1rem; }
+    .contact-strip-item > div { min-width: 0; }
+    .contact-label { display: block; font-size: 0.62rem; color: var(--white-50); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 2px; }
+    .contact-strip-item a, .contact-strip-item span.contact-val { font-size: 0.8rem; color: var(--white-70); transition: color var(--ease); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
     .contact-strip-item a:hover { color: var(--accent); }
     .resume-summary {
       margin-bottom: 48px;
@@ -130,18 +136,22 @@
       max-height: 90vh;
       border-radius: 12px;
       box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      cursor: zoom-in;
+      transform-origin: center;
+      user-select: none;
+      -webkit-user-drag: none;
     }
     .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 20px; margin-top: 20px; }
-    .cert-card { cursor: pointer; border-radius: 12px; overflow: hidden; background: var(--bg-card); border: 1px solid var(--border); transition: transform 0.25s, box-shadow 0.25s; }
+    .cert-card { cursor: pointer; border-radius: 12px; overflow: hidden; background: var(--bg-card); border: 1px solid var(--border); transition: transform 0.25s, box-shadow 0.25s; display: flex; flex-direction: column; }
     .cert-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
     .cert-thumb { position: relative; aspect-ratio: 3/4; overflow: hidden; }
     .cert-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform 0.3s; }
     .cert-card:hover .cert-thumb img { transform: scale(1.06); }
     .cert-overlay { position: absolute; inset: 0; background: rgba(227,36,43,0.55); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.2s; color: #fff; font-size: 2rem; }
     .cert-card:hover .cert-overlay { opacity: 1; }
-    .cert-info { padding: 10px 14px 12px; }
-    .cert-name { font-size: 0.82rem; font-weight: 600; margin: 0 0 4px; line-height: 1.3; color: #fff; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-    .cert-date-label { font-size: 0.72rem; color: var(--accent); font-weight: 500; }
+    .cert-info { padding: 10px 14px 12px; display: flex; flex-direction: column; flex: 1; }
+    .cert-name { font-size: 0.82rem; font-weight: 600; margin: 0 0 auto; padding-bottom: 8px; line-height: 1.3; color: #fff; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .cert-date-label { font-size: 0.7rem; color: #777; font-weight: 400; display: block; }
     .award-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px; margin-top: 20px; }
     .award-card { position: relative; }
     .cert-thumb--land { aspect-ratio: 4/3; }
@@ -151,6 +161,17 @@
     .cert-thumb--ph { background: var(--bg-tertiary); }
     .cert-thumb--ph img { object-fit: contain; padding: 28px; }
     .lightbox-caption { color: #fff; text-align: center; margin-top: 12px; font-size: 0.88rem; opacity: 0.8; max-width: 90vw; }
+    #lb-toolbar{display:none;align-items:center;gap:6px;margin-top:12px;background:rgba(0,0,0,0.65);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);border-radius:40px;padding:6px 14px;}
+    #lightbox.open #lb-toolbar{display:flex;}
+    #lb-toolbar button{background:none;border:none;color:#fff;cursor:pointer;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:background .15s;flex-shrink:0;}
+    #lb-toolbar button:hover{background:rgba(255,255,255,0.18);}
+    #lb-toolbar button:disabled{opacity:0.3;cursor:default;}
+    #lb-toolbar button:disabled:hover{background:none;}
+    #lb-zoom-pct{font-size:0.72rem;color:#bbb;min-width:40px;text-align:center;font-variant-numeric:tabular-nums;font-weight:500;}
+    #lb-zoom-bar{-webkit-appearance:none;appearance:none;width:110px;height:3px;background:rgba(255,255,255,0.2);border-radius:2px;outline:none;cursor:pointer;accent-color:#fff;}
+    #lb-zoom-bar::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:#fff;cursor:pointer;box-shadow:0 0 0 2px rgba(0,0,0,0.4);}
+    #lb-zoom-bar::-moz-range-thumb{width:13px;height:13px;border-radius:50%;background:#fff;border:none;cursor:pointer;}
+    #lb-divider{width:1px;height:16px;background:rgba(255,255,255,0.15);flex-shrink:0;}
     .lightbox-thumbs { display: none; gap: 8px; margin-top: 10px; justify-content: center; max-width: 90vw; flex-wrap: wrap; }
     .lightbox-thumbs.visible { display: flex; }
     .lightbox-thumb { width: 56px; height: 42px; object-fit: cover; border-radius: 4px; cursor: pointer; opacity: 0.45; border: 2px solid transparent; transition: opacity 0.2s, border-color 0.2s; }
@@ -161,33 +182,137 @@
     .lightbox-nav.visible { display: flex; }
     #lightbox-prev { left: 24px; }
     #lightbox-next { right: 24px; }
-    @media print {
-      #bg-canvas, .header, .resume-page-header .header-actions, .scroll-top, footer { display: none !important; }
-      body { background: #fff; color: #111; }
-      .resume-page-header { padding-top: 20px; }
-      .resume-page-header h1 { color: #111; }
-      .timeline-title { color: #111; }
-      .resume-summary, .contact-strip, .resume-block { border-color: #ddd; background: #fafafa; }
-      .skill-tag { border-color: #ccc; color: #333; background: #f5f5f5; }
-    }
+    #lightbox-close { position: fixed; top: 16px; right: 16px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); color: #fff; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; transition: background 0.2s, transform 0.2s; z-index: 2; }
+    #lightbox-close:hover { background: rgba(227,36,43,0.8); transform: scale(1.1); }
+    /* sticky header */
+    .cert-hours-label{display:inline-block;margin-top:3px;font-size:0.65rem;font-weight:500;color:#666;letter-spacing:.03em;}
+    /* accordion */
+    .resume-block-title{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:8px;user-select:none;}
+    .resume-block-title::after{content:'';width:7px;height:7px;border-right:2px solid var(--white-50);border-bottom:2px solid var(--white-50);transform:rotate(45deg) translateY(-2px);transition:transform 0.2s;flex-shrink:0;margin-right:2px;}
+    .resume-block.closed .resume-block-title::after{transform:rotate(-45deg) translateY(0);}
+    .resume-block-body{transition:max-height 0.3s ease,opacity 0.25s ease;opacity:1;}
+    .resume-block.closed .resume-block-body{overflow:hidden;max-height:0 !important;opacity:0;pointer-events:none;}
+    .resume-block.animating .resume-block-body{overflow:hidden;}
+    .doc-sub-label{font-size:0.75rem;color:var(--white-50);text-transform:uppercase;letter-spacing:.09em;font-weight:600;margin:24px 0 10px;display:flex;align-items:center;gap:6px;border-top:1px solid var(--border);padding-top:20px;}
+    .doc-sub-label.first{border-top:none;padding-top:0;margin-top:16px;}
+    [id]{scroll-margin-top:82px;}
+    /* gate */
+    #gate{position:fixed;inset:0;background:rgba(13,13,13,0.92);z-index:99998;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);}
+    #gate.pass{opacity:0;pointer-events:none;transition:opacity 0.4s ease;}
+    #gate-widget{background:#fff;border-radius:4px;width:302px;box-shadow:0 4px 24px rgba(0,0,0,0.6);overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
+    #gate-body{display:flex;align-items:center;padding:14px 16px;gap:14px;min-height:66px;}
+    #gate-cb-wrap{flex-shrink:0;width:28px;height:28px;position:relative;cursor:pointer;}
+    #gate-cb-wrap input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;margin:0;z-index:2;}
+    #gate-box{width:28px;height:28px;border:2px solid #d9d9d9;border-radius:2px;display:flex;align-items:center;justify-content:center;background:#fff;box-sizing:border-box;transition:border-color .2s;}
+    #gate-cb-wrap:hover #gate-box{border-color:#0051c3;}
+    #gate-box .gate-spinner{display:none;width:18px;height:18px;border:2px solid #e0e0e0;border-top-color:#f38020;border-radius:50%;animation:gspin .7s linear infinite;}
+    #gate-box .gate-tick{display:none;}
+    @keyframes gspin{to{transform:rotate(360deg)}}
+    #gate-label{flex:1;font-size:14px;color:#3d3d3d;line-height:1.4;user-select:none;}
+    #gate-label small{display:block;font-size:11px;color:#b0b0b0;margin-top:2px;}
+    #gate-brand{display:flex;flex-direction:column;align-items:center;gap:2px;flex-shrink:0;}
+    #gate-brand span{font-size:9px;color:#aaa;letter-spacing:.04em;}
+    #gate-error{display:none;padding:8px 16px;background:#fff3f3;border-top:1px solid #ffd6d6;font-size:12px;color:#c00;text-align:center;}
+    #gate-footer{background:#f8f8f8;border-top:1px solid #efefef;padding:5px 12px;display:flex;justify-content:space-between;font-size:10px;color:#b0b0b0;}
   </style>
 </head>
 
 <body>
 
+  <div id="gate">
+    <div id="gate-widget">
+      <div id="gate-body">
+        <div id="gate-cb-wrap">
+          <input type="checkbox" id="gate-cb" autocomplete="off">
+          <div id="gate-box">
+            <div class="gate-spinner"></div>
+            <svg class="gate-tick" width="14" height="11" viewBox="0 0 14 11" fill="none"><path d="M1.5 5.5L5.5 9.5L12.5 1.5" stroke="#00b140" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div id="gate-label">Verify you are human<small id="gate-status"></small></div>
+        <div id="gate-brand">
+          <svg width="28" height="34" viewBox="0 0 28 34" fill="none"><path d="M14 1L2 6.5V17c0 7.18 5.16 13.9 12 15.49C20.84 30.9 26 24.18 26 17V6.5L14 1Z" fill="#f38020"/><path d="M14 8v12M9 13l5-5 5 5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Turnstile</span>
+        </div>
+      </div>
+      <div id="gate-error">Verification failed. Please try again.</div>
+      <div id="gate-footer"><span>Privacy</span><span>Terms</span></div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      if(sessionStorage.getItem('gp')==='1'){
+        document.getElementById('gate').style.display='none';
+        return;
+      }
+      var t0=Date.now();
+      document.body.style.overflow='hidden';
+      var gate=document.getElementById('gate');
+      var box=document.getElementById('gate-box');
+      var cb=document.getElementById('gate-cb');
+      var status=document.getElementById('gate-status');
+      var errEl=document.getElementById('gate-error');
+      var spinner=box.querySelector('.gate-spinner');
+      var tick=box.querySelector('.gate-tick');
+      var labelText=document.querySelector('#gate-label');
+      cb.addEventListener('change',function(){
+        cb.disabled=true;
+        if(Date.now()-t0<500){
+          cb.disabled=false; cb.checked=false;
+          errEl.style.display='block';
+          setTimeout(function(){errEl.style.display='none'; t0=Date.now();},3000);
+          return;
+        }
+        box.style.border='none';
+        spinner.style.display='block';
+        status.textContent='Verifying...';
+        setTimeout(function(){
+          spinner.style.display='none';
+          tick.style.display='block';
+          box.style.cssText='width:28px;height:28px;display:flex;align-items:center;justify-content:center;background:#f0fff4;border:2px solid #00b140;border-radius:2px;box-sizing:border-box;';
+          status.textContent='';
+          labelText.firstChild.textContent='You are human';
+          setTimeout(function(){
+            gate.classList.add('pass');
+            document.body.style.overflow='';
+            sessionStorage.setItem('gp','1');
+            setTimeout(function(){gate.style.display='none';},400);
+          },600);
+        },1500);
+      });
+    })();
+  </script>
+
   <canvas id="bg-canvas"></canvas>
 
 
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="/dict" class="nav-logo"><img src="../assets/images/favicons/ms-icon-310x310.png" alt="Ryan Abcede" width="32"></a>
+      <ul class="nav-list">
+        <li><a href="#resume" class="nav-link active">Resume</a></li>
+        <li><a href="#documents" class="nav-link">Documents</a></li>
+        <li><a href="#trainings" class="nav-link">Trainings</a></li>
+        <li><a href="#awards" class="nav-link">Awards</a></li>
+        <li><a href="#clearances" class="nav-link">Clearances</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
   <main class="resume-main">
 
-    <div class="resume-page-header">
+    <div class="resume-page-header" id="resume">
       <div class="container">
         <img src="../assets/images/my-avatar.png" alt="Ryan Abcede" class="resume-avatar" id="resumeAvatar">
         <h1>Ryan Abcede</h1>
-        <p class="hero-title">Full-Stack Developer &bull; Software Engineer</p>
-        <div class="header-actions">
-          <button class="btn btn-primary" onclick="window.print()">
-            <ion-icon name="print-outline"></ion-icon> Print / Save as PDF
+        <p class="hero-title">Full-Stack Developer &bull; Systems Administrator</p>
+        <div class="header-actions" style="margin-top:20px;">
+          <button class="btn btn-primary" id="downloadAllBtn">
+            <ion-icon name="download-outline"></ion-icon> Download All Documents
           </button>
         </div>
       </div>
@@ -197,30 +322,38 @@
 
       <div class="contact-strip">
         <div class="contact-strip-item">
-          <ion-icon name="mail-outline"></ion-icon>
-          <a href="mailto:rai@abcede.dev">rai@abcede.dev</a>
+          <div class="contact-icon"><ion-icon name="mail-outline"></ion-icon></div>
+          <div><span class="contact-label">Email</span><a href="mailto:rai@abcede.dev">rai@abcede.dev</a></div>
         </div>
         <div class="contact-strip-item">
-          <ion-icon name="call-outline"></ion-icon>
-          <a href="tel:+639760023670">+63 976 0023 670</a>
+          <div class="contact-icon"><ion-icon name="call-outline"></ion-icon></div>
+          <div><span class="contact-label">Phone</span><a href="tel:+639068880285">+63 906 888 0285</a></div>
         </div>
         <div class="contact-strip-item">
-          <ion-icon name="location-outline"></ion-icon>
-          <span>Cagayan de Oro City, Philippines</span>
+          <div class="contact-icon"><ion-icon name="logo-linkedin"></ion-icon></div>
+          <div><span class="contact-label">LinkedIn</span><a href="https://www.linkedin.com/in/ryan-abcede-a054402bb/" target="_blank">ryan-abcede</a></div>
         </div>
         <div class="contact-strip-item">
-          <ion-icon name="logo-linkedin"></ion-icon>
-          <a href="https://www.linkedin.com/in/ryan-abcede-a054402bb/" target="_blank">linkedin.com/in/ryan-abcede</a>
+          <div class="contact-icon"><ion-icon name="globe-outline"></ion-icon></div>
+          <div><span class="contact-label">Website</span><a href="https://abcede.dev/" target="_blank">abcede.dev</a></div>
         </div>
         <div class="contact-strip-item">
-          <ion-icon name="globe-outline"></ion-icon>
-          <a href="https://abcede.dev/" target="_blank">abcede.dev</a>
+          <div class="contact-icon"><ion-icon name="logo-google-playstore"></ion-icon></div>
+          <div><span class="contact-label">Google Play</span><a href="https://play.google.com/store/apps/dev?id=4738230515580449277&hl=en" target="_blank">Lazy Corgi</a></div>
+        </div>
+        <div class="contact-strip-item">
+          <div class="contact-icon"><ion-icon name="extension-puzzle-outline"></ion-icon></div>
+          <div><span class="contact-label">Chrome</span><a href="https://chromewebstore.google.com/search/abcede" target="_blank">Extensions</a></div>
+        </div>
+        <div class="contact-strip-item">
+          <div class="contact-icon"><ion-icon name="location-outline"></ion-icon></div>
+          <div><span class="contact-label">Location</span><span class="contact-val">Cagayan de Oro, PH</span></div>
         </div>
       </div>
 
-      <div class="resume-summary">
+      <!-- <div class="resume-summary">
         <p>Hi, I'm a full-stack developer and systems engineer with <span id="years-exp-dict">7</span>+ years of experience spanning software development, server infrastructure, and cybersecurity. On the software side, I build SaaS platforms, dashboards, WordPress sites, mobile apps, and browser-based tools using PHP, JavaScript, TypeScript, Python, and Dart. On the infrastructure side, I manage and harden Linux servers, deploy virtualized environments with Proxmox and VMware, configure firewalls and VPNs (pfSense, WireGuard, OpenVPN, UFW/iptables), and set up monitoring stacks with Grafana, Prometheus, and Uptime Kuma. For security, I apply OWASP principles, conduct penetration testing, and use tools like Nmap, Wireshark, and Burp Suite to identify and remediate vulnerabilities. I also handle hardware-level IT — network setup, server rack configuration, printer and peripheral troubleshooting, and general device maintenance.</p>
-      </div>
+      </div> -->
 
       <div class="resume-grid">
 
@@ -403,36 +536,30 @@
       </div>
     </div>
 
-    <div class="container" style="margin-top:40px;">
+    <div id="documents" class="container" style="margin-top:40px;">
       <div class="resume-block">
-        <h3 class="resume-block-title"><ion-icon name="person-circle-outline"></ion-icon> Personal Data Sheet (PDS)</h3>
+        <h3 class="resume-block-title"><ion-icon name="document-text-outline"></ion-icon> Official Documents</h3>
+
+        <p class="doc-sub-label first"><ion-icon name="person-circle-outline"></ion-icon> Personal Data Sheet (PDS)</p>
         <div class="cert-grid">
           <div style="display:none" data-cert-link data-cert-group="pds" data-cert-src="../assets/docs/pds/4_page-0001.jpg" data-cert-title="Personal Data Sheet — Page 4" data-cert-date="2026"></div>
           <div style="display:none" data-cert-link data-cert-group="pds" data-cert-src="../assets/docs/pds/3_page-0001.jpg" data-cert-title="Personal Data Sheet — Page 3" data-cert-date="2026"></div>
           <div style="display:none" data-cert-link data-cert-group="pds" data-cert-src="../assets/docs/pds/2_page-0001.jpg" data-cert-title="Personal Data Sheet — Page 2" data-cert-date="2026"></div>
           <div class="cert-card" data-cert-link data-cert-group="pds" data-cert-src="../assets/docs/pds/1_page-0001.jpg" data-cert-title="Personal Data Sheet — Page 1" data-cert-date="2026">
             <div class="cert-thumb"><img src="../assets/docs/pds/1_page-0001.jpg" alt="PDS Page 1" loading="lazy"><div class="cert-overlay"><ion-icon name="expand-outline"></ion-icon></div></div>
-            <div class="cert-info"><p class="cert-name">Personal Data Sheet — Page 1</p><span class="cert-date-label">2026</span></div>
+            <div class="cert-info"><p class="cert-name">Personal Data Sheet</p><span class="cert-date-label">2026</span></div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="container" style="margin-top:40px;">
-      <div class="resume-block">
-        <h3 class="resume-block-title"><ion-icon name="school-outline"></ion-icon> Diploma</h3>
+        <p class="doc-sub-label"><ion-icon name="school-outline"></ion-icon> Diploma</p>
         <div class="cert-grid">
-          <div class="cert-card" data-cert-link data-cert-src="../assets/images/favicons/ms-icon-310x310.png" data-cert-title="Diploma — Xavier University" data-cert-date="Pending upload">
-            <div class="cert-thumb cert-thumb--ph"><img src="../assets/images/favicons/ms-icon-310x310.png" alt="Diploma" loading="lazy"><div class="cert-overlay"><ion-icon name="expand-outline"></ion-icon></div></div>
-            <div class="cert-info"><p class="cert-name">Diploma — Xavier University</p><span class="cert-date-label">Pending upload</span></div>
+          <div class="cert-card" style="cursor:default;">
+            <!-- <div class="cert-thumb cert-thumb--ph"><img src="../assets/images/favicons/ms-icon-310x310.png" alt="Diploma" loading="lazy"><div class="cert-overlay"><ion-icon name="expand-outline"></ion-icon></div></div> -->
+            <div class="cert-info"><p class="cert-name">Diploma — Xavier University</p><span class="cert-date-label">Pending request</span></div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="container" style="margin-top:40px;">
-      <div class="resume-block">
-        <h3 class="resume-block-title"><ion-icon name="reader-outline"></ion-icon> Transcript of Records</h3>
+        <p class="doc-sub-label"><ion-icon name="reader-outline"></ion-icon> Transcript of Records</p>
         <div class="cert-grid">
           <div style="display:none" data-cert-link data-cert-group="tor" data-cert-src="../assets/docs/tor/Transcript of Records_page-0002.jpg" data-cert-title="Transcript of Records — Xavier University, Page 2" data-cert-date="2026"></div>
           <div class="cert-card" data-cert-link data-cert-group="tor" data-cert-src="../assets/docs/tor/Transcript of Records_page-0001.jpg" data-cert-title="Transcript of Records — Xavier University, Page 1" data-cert-date="2026">
@@ -440,22 +567,19 @@
             <div class="cert-info"><p class="cert-name">Transcript of Records — Xavier University</p><span class="cert-date-label">2026</span></div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="container" style="margin-top:40px;">
-      <div class="resume-block">
-        <h3 class="resume-block-title"><ion-icon name="shield-checkmark-outline"></ion-icon> Certificate of Eligibility</h3>
+        <p class="doc-sub-label"><ion-icon name="shield-checkmark-outline"></ion-icon> Certificate of Eligibility</p>
         <div class="cert-grid">
           <div class="cert-card" data-cert-link data-cert-src="../assets/docs/eligibility.jpg" data-cert-title="Certificate of Eligibility — Civil Service Professional" data-cert-date="December 18, 2015">
             <div class="cert-thumb cert-thumb--land"><img src="../assets/docs/eligibility.jpg" alt="Certificate of Eligibility" loading="lazy"><div class="cert-overlay"><ion-icon name="expand-outline"></ion-icon></div></div>
             <div class="cert-info"><p class="cert-name">Certificate of Eligibility — Civil Service Professional</p><span class="cert-date-label">December 18, 2015</span></div>
           </div>
         </div>
+
       </div>
     </div>
 
-    <div class="container">
+    <div id="trainings" class="container">
       <div class="resume-block">
         <h3 class="resume-block-title">
           <ion-icon name="ribbon-outline"></ion-icon> Certificates &amp; Trainings
@@ -470,6 +594,7 @@
             <div class="cert-info">
               <p class="cert-name">DEVCON Summit CDO</p>
               <span class="cert-date-label">November 9, 2019</span>
+              <span class="cert-hours-label">8 hours</span>
             </div>
           </div>
 
@@ -481,6 +606,7 @@
             <div class="cert-info">
               <p class="cert-name">Intellectual Property</p>
               <span class="cert-date-label">June 24, 2021</span>
+              <span class="cert-hours-label">4 hours</span>
             </div>
           </div>
 
@@ -492,6 +618,7 @@
             <div class="cert-info">
               <p class="cert-name">DICT: 40hrs Web Development</p>
               <span class="cert-date-label">July 8, 2022</span>
+              <span class="cert-hours-label">40 hours</span>
             </div>
           </div>
 
@@ -503,6 +630,7 @@
             <div class="cert-info">
               <p class="cert-name">Web Accessibility Audit</p>
               <span class="cert-date-label">March 13, 2023</span>
+              <span class="cert-hours-label">20 hours</span>
             </div>
           </div>
 
@@ -514,6 +642,7 @@
             <div class="cert-info">
               <p class="cert-name">DICT: Web Dev Training of Trainers</p>
               <span class="cert-date-label">March 31, 2023</span>
+              <span class="cert-hours-label">40 hours</span>
             </div>
           </div>
 
@@ -525,6 +654,7 @@
             <div class="cert-info">
               <p class="cert-name">Udemy: Flutter &amp; Dart</p>
               <span class="cert-date-label">August 14, 2023</span>
+              <span class="cert-hours-label">30 hours</span>
             </div>
           </div>
 
@@ -536,6 +666,7 @@
             <div class="cert-info">
               <p class="cert-name">CSC Digital Transformation</p>
               <span class="cert-date-label">September 5, 2023</span>
+              <span class="cert-hours-label">8 hours</span>
             </div>
           </div>
 
@@ -547,6 +678,7 @@
             <div class="cert-info">
               <p class="cert-name">DICT: Cybersecurity Knowledge Quest</p>
               <span class="cert-date-label">February 21, 2024</span>
+              <span class="cert-hours-label">8 hours</span>
             </div>
           </div>
 
@@ -558,6 +690,7 @@
             <div class="cert-info">
               <p class="cert-name">DICT: Social Engineering in Love</p>
               <span class="cert-date-label">February 28, 2024</span>
+              <span class="cert-hours-label">8 hours</span>
             </div>
           </div>
 
@@ -569,6 +702,7 @@
             <div class="cert-info">
               <p class="cert-name">DICT: Digital Defense</p>
               <span class="cert-date-label">February 28, 2024</span>
+              <span class="cert-hours-label">8 hours</span>
             </div>
           </div>
 
@@ -580,6 +714,7 @@
             <div class="cert-info">
               <p class="cert-name">Kwentong Lingkod Bayani: Leadership</p>
               <span class="cert-date-label">August 15, 2025</span>
+              <span class="cert-hours-label">8 hours</span>
             </div>
           </div>
 
@@ -591,6 +726,7 @@
             <div class="cert-info">
               <p class="cert-name">ICT Project Management</p>
               <span class="cert-date-label">October 10, 2025</span>
+              <span class="cert-hours-label">2 hours</span>
             </div>
           </div>
 
@@ -602,6 +738,7 @@
             <div class="cert-info">
               <p class="cert-name">ChatGPT for Government Employees</p>
               <span class="cert-date-label">October 11, 2025</span>
+              <span class="cert-hours-label">4 hours</span>
             </div>
           </div>
 
@@ -613,6 +750,7 @@
             <div class="cert-info">
               <p class="cert-name">Cyber Threats</p>
               <span class="cert-date-label">June 25–26, 2026</span>
+              <span class="cert-hours-label">16 hours</span>
             </div>
           </div>
 
@@ -620,7 +758,7 @@
       </div>
     </div>
 
-    <div class="container" style="margin-top:40px;">
+    <div id="awards" class="container" style="margin-top:40px;">
       <div class="resume-block">
         <h3 class="resume-block-title">
           <ion-icon name="trophy-outline"></ion-icon> Award &amp; Recognition
@@ -659,51 +797,42 @@
       </div>
     </div>
 
-    <div class="container" style="margin-top:40px;">
+    <div id="clearances" class="container" style="margin-top:40px; padding-bottom:60px;">
       <div class="resume-block">
-        <h3 class="resume-block-title"><ion-icon name="bar-chart-outline"></ion-icon> Last Rating Period</h3>
+        <h3 class="resume-block-title"><ion-icon name="shield-outline"></ion-icon> Employment &amp; Clearances</h3>
+
+        <p class="doc-sub-label first"><ion-icon name="bar-chart-outline"></ion-icon> Last Rating Period</p>
         <div class="cert-grid">
-          <div class="cert-card" data-cert-link data-cert-src="../assets/images/favicons/ms-icon-310x310.png" data-cert-title="Last Rating Period" data-cert-date="Pending upload">
-            <div class="cert-thumb cert-thumb--ph"><img src="../assets/images/favicons/ms-icon-310x310.png" alt="Last Rating Period" loading="lazy"><div class="cert-overlay"><ion-icon name="expand-outline"></ion-icon></div></div>
-            <div class="cert-info"><p class="cert-name">Last Rating Period</p><span class="cert-date-label">Pending upload</span></div>
+          <div class="cert-card" data-cert-link data-cert-src="../assets/docs/ratings.jpg" data-cert-title="Last Rating Period — January to June 2026" data-cert-date="July 6, 2026">
+            <div class="cert-thumb"><img src="../assets/docs/ratings.jpg" alt="Last Rating Period" loading="lazy"><div class="cert-overlay"><ion-icon name="expand-outline"></ion-icon></div></div>
+            <div class="cert-info"><p class="cert-name">Last Rating Period</p><span class="cert-date-label">July 6, 2026</span></div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="container" style="margin-top:40px;">
-      <div class="resume-block">
-        <h3 class="resume-block-title"><ion-icon name="briefcase-outline"></ion-icon> Certificate of Employment</h3>
+        <p class="doc-sub-label"><ion-icon name="briefcase-outline"></ion-icon> Certificate of Employment</p>
         <div class="cert-grid">
           <div class="cert-card" data-cert-link data-cert-src="../assets/docs/certificate of employment.jpg" data-cert-title="Certificate of Employment" data-cert-date="2026">
             <div class="cert-thumb"><img src="../assets/docs/certificate of employment.jpg" alt="Certificate of Employment" loading="lazy"><div class="cert-overlay"><ion-icon name="expand-outline"></ion-icon></div></div>
             <div class="cert-info"><p class="cert-name">Certificate of Employment</p><span class="cert-date-label">2026</span></div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="container" style="margin-top:40px;">
-      <div class="resume-block">
-        <h3 class="resume-block-title"><ion-icon name="checkmark-done-circle-outline"></ion-icon> Certificate of No Pending Case</h3>
+        <p class="doc-sub-label"><ion-icon name="checkmark-done-circle-outline"></ion-icon> Certificate of No Pending Case</p>
         <div class="cert-grid">
           <div class="cert-card" data-cert-link data-cert-src="../assets/docs/no pending case.jpg" data-cert-title="Certificate of No Pending Case" data-cert-date="2026">
             <div class="cert-thumb"><img src="../assets/docs/no pending case.jpg" alt="Certificate of No Pending Case" loading="lazy"><div class="cert-overlay"><ion-icon name="expand-outline"></ion-icon></div></div>
             <div class="cert-info"><p class="cert-name">Certificate of No Pending Case</p><span class="cert-date-label">2026</span></div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="container" style="margin-top:40px; padding-bottom:60px;">
-      <div class="resume-block">
-        <h3 class="resume-block-title"><ion-icon name="finger-print-outline"></ion-icon> NBI Clearance</h3>
+        <p class="doc-sub-label"><ion-icon name="finger-print-outline"></ion-icon> NBI Clearance</p>
         <div class="cert-grid">
           <div class="cert-card" data-cert-link data-cert-src="../assets/docs/nbi.jpg" data-cert-title="NBI Clearance" data-cert-date="2026">
             <div class="cert-thumb"><img src="../assets/docs/nbi.jpg" alt="NBI Clearance" loading="lazy"><div class="cert-overlay"><ion-icon name="expand-outline"></ion-icon></div></div>
-            <div class="cert-info"><p class="cert-name">NBI Clearance</p><span class="cert-date-label">2026</span></div>
+            <div class="cert-info"><p class="cert-name">NBI Clearance</p><span class="cert-date-label">Pending request</span></div>
           </div>
         </div>
+
       </div>
     </div>
 
@@ -728,9 +857,18 @@
   </footer>
 
   <div class="lightbox" id="lightbox">
+    <button id="lightbox-close" aria-label="Close"><ion-icon name="close-outline"></ion-icon></button>
     <button class="lightbox-nav" id="lightbox-prev"><ion-icon name="chevron-back-outline"></ion-icon></button>
     <button class="lightbox-nav" id="lightbox-next"><ion-icon name="chevron-forward-outline"></ion-icon></button>
     <img id="lightbox-img" src="../assets/images/my-avatar.png" alt="">
+    <div id="lb-toolbar">
+      <button id="lb-zoom-out" title="Zoom Out"><ion-icon name="remove-outline"></ion-icon></button>
+      <input type="range" id="lb-zoom-bar" min="100" max="800" step="10" value="100">
+      <span id="lb-zoom-pct">100%</span>
+      <button id="lb-zoom-in" title="Zoom In"><ion-icon name="add-outline"></ion-icon></button>
+      <div id="lb-divider"></div>
+      <button id="lb-zoom-reset" title="Reset zoom"><ion-icon name="scan-outline"></ion-icon></button>
+    </div>
     <p class="lightbox-caption" id="lightbox-caption"></p>
     <div class="lightbox-thumbs" id="lightbox-thumbs"></div>
   </div>
@@ -740,7 +878,6 @@
     const label = now.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
     document.querySelectorAll('.current-date').forEach(el => el.textContent = label);
     document.getElementById('current-year').textContent = now.getFullYear();
-    document.getElementById('years-exp-dict').textContent = (now.getFullYear() - 2016) - 1;
     const scrollTopBtn = document.getElementById('scrollTop');
     window.addEventListener('scroll', () => {
       scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
@@ -787,24 +924,215 @@
       thumbsEl.classList.remove('visible');
       thumbsEl.innerHTML = '';
       lightbox.classList.add('open');
+      document.body.style.overflow='hidden';
     });
 
     document.querySelectorAll('.cert-grid').forEach(g => [...g.children].reverse().forEach(c => g.appendChild(c)));
 
     document.querySelectorAll('[data-cert-link]').forEach((card, i) => {
       certCards.push(card);
-      card.addEventListener('click', () => { showCert(i); lightbox.classList.add('open'); });
+      card.addEventListener('click', () => { showCert(i); lightbox.classList.add('open'); document.body.style.overflow='hidden'; });
     });
 
     prevBtn.addEventListener('click', e => { e.stopPropagation(); if (certIdx > 0) showCert(certIdx - 1); });
     nextBtn.addEventListener('click', e => { e.stopPropagation(); if (certIdx < certCards.length - 1) showCert(certIdx + 1); });
 
-    lightbox.addEventListener('click', () => { lightbox.classList.remove('open'); certIdx = -1; thumbsEl.classList.remove('visible'); thumbsEl.innerHTML = ''; });
+    // Zoom & pan
+    let zScale = 1, zTx = 0, zTy = 0, zDragging = false, zDragMoved = false, zSx, zSy, zLastDist = 0;
+    const lbZoomBar = document.getElementById('lb-zoom-bar');
+    const lbZoomPct = document.getElementById('lb-zoom-pct');
+    const lbZoomIn  = document.getElementById('lb-zoom-in');
+    const lbZoomOut = document.getElementById('lb-zoom-out');
+    function zApply() {
+      // Clamp pan so image never leaves the viewport
+      const iw = lightboxImg.offsetWidth;
+      const ih = lightboxImg.offsetHeight;
+      const maxTx = Math.max(0, (iw * zScale - window.innerWidth)  / 2) / zScale;
+      const maxTy = Math.max(0, (ih * zScale - window.innerHeight) / 2) / zScale;
+      zTx = Math.max(-maxTx, Math.min(maxTx, zTx));
+      zTy = Math.max(-maxTy, Math.min(maxTy, zTy));
+      lightboxImg.style.transform = `scale(${zScale}) translate(${zTx}px,${zTy}px)`;
+      lightboxImg.style.cursor = zScale > 1 ? (zDragging ? 'grabbing' : 'grab') : 'zoom-in';
+      const pct = Math.round(zScale * 100);
+      lbZoomPct.textContent = pct + '%';
+      lbZoomBar.value = pct;
+      lbZoomOut.disabled = zScale <= 1;
+      lbZoomIn.disabled  = zScale >= 8;
+    }
+    function zReset() { zScale = 1; zTx = 0; zTy = 0; zDragging = false; zApply(); }
+    lbZoomIn.addEventListener('click',  e => { e.stopPropagation(); zScale = Math.min(zScale * 1.3, 8); zApply(); });
+    lbZoomOut.addEventListener('click', e => { e.stopPropagation(); zScale = Math.max(zScale / 1.3, 1); if(zScale===1){zTx=0;zTy=0;} zApply(); });
+    document.getElementById('lb-zoom-reset').addEventListener('click', e => { e.stopPropagation(); zReset(); });
+    lbZoomBar.addEventListener('input', e => { e.stopPropagation(); zScale = lbZoomBar.value / 100; if(zScale===1){zTx=0;zTy=0;} zApply(); });
+    document.getElementById('lb-toolbar').addEventListener('click', e => e.stopPropagation());
+    // reset on image change (nav) or close
+    new MutationObserver(zReset).observe(lightboxImg, { attributes: true, attributeFilter: ['src'] });
+    // scroll to zoom
+    lightboxImg.addEventListener('wheel', e => {
+      e.preventDefault();
+      e.stopPropagation();
+      zScale = Math.min(Math.max(zScale * (e.deltaY < 0 ? 1.15 : 0.87), 1), 8);
+      if (zScale === 1) { zTx = 0; zTy = 0; }
+      zApply();
+    }, { passive: false });
+    // double-click to zoom / reset
+    lightboxImg.addEventListener('dblclick', e => {
+      e.stopPropagation();
+      if (zScale > 1) { zReset(); } else { zScale = 2.5; zApply(); }
+    });
+    // mouse drag
+    lightboxImg.addEventListener('mousedown', e => {
+      if (zScale <= 1) return;
+      e.preventDefault(); zDragging = true; zDragMoved = false;
+      zSx = e.clientX - zTx; zSy = e.clientY - zTy;
+    });
+    window.addEventListener('mousemove', e => {
+      if (!zDragging || e.target.closest('#lb-toolbar')) return;
+      zTx = e.clientX - zSx; zTy = e.clientY - zSy; zDragMoved = true; zApply();
+    });
+    window.addEventListener('mouseup', () => { zDragging = false; zApply(); });
+    lightboxImg.addEventListener('click', e => { e.stopPropagation(); zDragMoved = false; });
+    // touch pinch & pan
+    lightboxImg.addEventListener('touchstart', e => {
+      if (e.touches.length === 2) { zLastDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY); }
+      else if (e.touches.length === 1 && zScale > 1) { zDragging = true; zSx = e.touches[0].clientX - zTx; zSy = e.touches[0].clientY - zTy; }
+    }, { passive: true });
+    lightboxImg.addEventListener('touchmove', e => {
+      if (e.touches.length === 2) {
+        e.preventDefault();
+        const d = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        zScale = Math.min(Math.max(zScale * (d / zLastDist), 1), 8);
+        zLastDist = d; if (zScale === 1) { zTx = 0; zTy = 0; } zApply();
+      } else if (e.touches.length === 1 && zDragging) {
+        zTx = e.touches[0].clientX - zSx; zTy = e.touches[0].clientY - zSy; zApply();
+      }
+    }, { passive: false });
+    lightboxImg.addEventListener('touchend', () => { zDragging = false; });
+
+    document.getElementById('lightbox-close').addEventListener('click', e => { e.stopPropagation(); lightbox.classList.remove('open'); document.body.style.overflow=''; certIdx = -1; thumbsEl.classList.remove('visible'); thumbsEl.innerHTML = ''; zReset(); });
+    lightbox.addEventListener('wheel', e => e.preventDefault(), { passive: false });
+    lightbox.addEventListener('touchmove', e => { if (!e.target.closest('#lb-toolbar')) e.preventDefault(); }, { passive: false });
+    lightbox.addEventListener('click', () => { lightbox.classList.remove('open'); document.body.style.overflow=''; certIdx = -1; thumbsEl.classList.remove('visible'); thumbsEl.innerHTML = ''; zReset(); });
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') { lightbox.classList.remove('open'); certIdx = -1; }
+      if (e.key === 'Escape') { lightbox.classList.remove('open'); document.body.style.overflow=''; certIdx = -1; }
       if (!lightbox.classList.contains('open') || certIdx === -1) return;
       if (e.key === 'ArrowLeft' && certIdx > 0) showCert(certIdx - 1);
       if (e.key === 'ArrowRight' && certIdx < certCards.length - 1) showCert(certIdx + 1);
+    });
+  </script>
+  <script>
+    // Accordion
+    document.querySelectorAll('.resume-block').forEach(block => {
+      const title = block.querySelector('.resume-block-title');
+      if (!title) return;
+      // Wrap all siblings after title in a body div
+      const body = document.createElement('div');
+      body.className = 'resume-block-body';
+      while (title.nextSibling) body.appendChild(title.nextSibling);
+      block.appendChild(body);
+      // Open blocks need no max-height constraint
+      body.style.maxHeight = 'none';
+      // Mark closed by default
+      const text = title.textContent.trim();
+      if (window.innerWidth < 768 && /Education|Internship|Technical Skills|Experience/.test(text)) {
+        block.classList.add('closed');
+        body.style.maxHeight = '0';
+      }
+      title.addEventListener('click', () => {
+        const isClosing = !block.classList.contains('closed');
+        block.classList.add('animating');
+        if (isClosing) {
+          body.style.maxHeight = body.scrollHeight + 'px';
+          requestAnimationFrame(() => { block.classList.add('closed'); body.style.maxHeight = '0'; });
+          body.addEventListener('transitionend', () => block.classList.remove('animating'), { once: true });
+        } else {
+          block.classList.remove('closed');
+          body.style.maxHeight = body.scrollHeight + 'px';
+          body.addEventListener('transitionend', () => {
+            block.classList.remove('animating');
+            body.style.maxHeight = 'none';
+          }, { once: true });
+        }
+      });
+    });
+    // Mobile nav toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navList = document.querySelector('.nav-list');
+    navToggle.addEventListener('click', function(){ this.classList.toggle('active'); navList.classList.toggle('active'); });
+    document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => { navToggle.classList.remove('active'); navList.classList.remove('active'); }));
+    // Active nav on scroll
+    const dictNavLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    const dictObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) dictNavLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id)); });
+    }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+    document.querySelectorAll('#resume,#documents,#trainings,#awards,#clearances').forEach(el => dictObserver.observe(el));
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script>
+    document.getElementById('downloadAllBtn').addEventListener('click', async function() {
+      const btn = this;
+      btn.disabled = true;
+
+      const files = [
+        // PDS
+        { folder: 'PDS', url: '../assets/docs/pds/1_page-0001.jpg',  name: 'PDS Page 1.jpg' },
+        { folder: 'PDS', url: '../assets/docs/pds/2_page-0001.jpg',  name: 'PDS Page 2.jpg' },
+        { folder: 'PDS', url: '../assets/docs/pds/3_page-0001.jpg',  name: 'PDS Page 3.jpg' },
+        { folder: 'PDS', url: '../assets/docs/pds/4_page-0001.jpg',  name: 'PDS Page 4.jpg' },
+        // TOR
+        { folder: 'Transcript of Records', url: '../assets/docs/tor/Transcript of Records_page-0001.jpg', name: 'TOR Page 1.jpg' },
+        { folder: 'Transcript of Records', url: '../assets/docs/tor/Transcript of Records_page-0002.jpg', name: 'TOR Page 2.jpg' },
+        // Eligibility
+        { folder: 'Eligibility', url: '../assets/docs/eligibility.jpg', name: 'Certificate of Eligibility.jpg' },
+        // Clearances
+        { folder: 'Clearances', url: '../assets/docs/ratings.jpg',                      name: 'Last Rating Period.jpg' },
+        { folder: 'Clearances', url: '../assets/docs/certificate of employment.jpg',     name: 'Certificate of Employment.jpg' },
+        { folder: 'Clearances', url: '../assets/docs/no pending case.jpg',               name: 'Certificate of No Pending Case.jpg' },
+        { folder: 'Clearances', url: '../assets/docs/nbi.jpg',                           name: 'NBI Clearance.jpg' },
+        // Certificates
+        { folder: 'Certificates', url: '../assets/images/certificates/DEVCON Summit CDO 2019 Certificate of Attendance_page-0001.jpg', name: 'DEVCON Summit CDO 2019.jpg' },
+        { folder: 'Certificates', url: '../assets/images/certificates/Intelectual Property 06242021.png',                              name: 'Intellectual Property 2021.png' },
+        { folder: 'Certificates', url: '../assets/images/certificates/DICT 40hrs Web Development 07082022_page-0001.jpg',              name: 'DICT 40hrs Web Development 2022.jpg' },
+        { folder: 'Certificates', url: '../assets/images/certificates/Web Accessibility Audit 13 March 2023_page-0001.jpg',            name: 'Web Accessibility Audit 2023.jpg' },
+        { folder: 'Certificates', url: '../assets/images/certificates/DICT 40hrs Web Development Training of Trainers 03312023_page-0001.jpg', name: 'DICT Web Dev Training of Trainers 2023.jpg' },
+        { folder: 'Certificates', url: '../assets/images/certificates/Udemy - Flutter & Dart 08142023.jpg',                            name: 'Udemy Flutter & Dart 2023.jpg' },
+        { folder: 'Certificates', url: '../assets/images/certificates/CSC Digital Transformation 20230905.jpg',                        name: 'CSC Digital Transformation 2023.jpg' },
+        { folder: 'Certificates', url: '../assets/images/certificates/DICT 02212024  Cybersecurity Knowledge Quest An interactive learning Adventure_page-0001.jpg', name: 'DICT Cybersecurity Knowledge Quest 2024.jpg' },
+        { folder: 'Certificates', url: '../assets/images/certificates/DICT 02142024 Social Engineering in Love_page-0001.jpg',         name: 'DICT Social Engineering in Love 2024.jpg' },
+        { folder: 'Certificates', url: '../assets/images/certificates/DICT 02282024 Digital Defense Secure your accounts & safeguard your privacy_page-0001.jpg', name: 'DICT Digital Defense 2024.jpg' },
+        { folder: 'Certificates', url: '../assets/images/certificates/Kwentong Lingkod Bayani 2hrs Leadership 07152025_page-0001.jpg', name: 'Kwentong Lingkod Bayani Leadership 2025.jpg' },
+        { folder: 'Certificates', url: '../assets/images/certificates/ICT Project Management Oct 10 2025_page-0001.jpg',               name: 'ICT Project Management 2025.jpg' },
+        { folder: 'Certificates', url: '../assets/images/certificates/ChatGPT for Government Employees_page-0001.jpg',                 name: 'ChatGPT for Government Employees 2025.jpg' },
+        { folder: 'Certificates', url: '../assets/images/certificates/cyber threats june 25-26 2026.jpg',                              name: 'Cyber Threats 2026.jpg' },
+        // Awards
+        { folder: 'Awards', url: '../assets/images/certificates/Basic Web Designing and Programming 2020.jpg', name: 'Speaker - Basic Web Designing 2020.jpg' },
+        { folder: 'Awards', url: '../assets/images/speaker/82982519_2536818503253937_3169033832577892352_n.jpg', name: 'Speaker Photo 1.jpg' },
+        { folder: 'Awards', url: '../assets/images/speaker/83118417_1322024281338560_7541894865911545856_n.jpg', name: 'Speaker Certificate 2020.jpg' },
+        { folder: 'Awards', url: '../assets/images/award/most innovative award 2019 PhIIRE Corporations.jpg',   name: 'Most Innovative Award 2019.jpg' },
+      ];
+
+      const zip = new JSZip();
+      let done = 0;
+      const total = files.length;
+
+      await Promise.all(files.map(async f => {
+        try {
+          const res = await fetch(f.url);
+          if (res.ok) zip.folder(f.folder).file(f.name, await res.blob());
+        } catch(e) {}
+        btn.innerHTML = `<ion-icon name="hourglass-outline"></ion-icon> Fetching ${++done}/${total}...`;
+      }));
+
+      btn.innerHTML = '<ion-icon name="hourglass-outline"></ion-icon> Creating ZIP...';
+      const blob = await zip.generateAsync({ type: 'blob', compression: 'DEFLATE', compressionOptions: { level: 6 } });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'Ryan Abcede - Documents.zip';
+      a.click();
+      URL.revokeObjectURL(a.href);
+
+      btn.disabled = false;
+      btn.innerHTML = '<ion-icon name="download-outline"></ion-icon> Download All Documents';
     });
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
