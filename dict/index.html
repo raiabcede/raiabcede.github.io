@@ -133,7 +133,7 @@
     .lightbox.open { display: flex; flex-direction: column; }
     .lightbox img {
       max-width: 90vw;
-      max-height: 90vh;
+      max-height: calc(100vh - 180px);
       border-radius: 12px;
       box-shadow: 0 20px 60px rgba(0,0,0,0.6);
       cursor: zoom-in;
@@ -184,6 +184,22 @@
     #lightbox-next { right: 24px; }
     #lightbox-close { position: fixed; top: 16px; right: 16px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); color: #fff; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; transition: background 0.2s, transform 0.2s; z-index: 2; }
     #lightbox-close:hover { background: rgba(227,36,43,0.8); transform: scale(1.1); }
+    /* nav download button */
+    #nav-dl-btn {
+      display: flex; align-items: center; gap: 6px;
+      padding: 6px 14px; border-radius: 20px; border: none; cursor: pointer;
+      background: var(--accent); color: #fff; font-size: 0.8rem; font-weight: 600;
+      white-space: nowrap; flex-shrink: 0;
+      opacity: 0; transform: translateY(-12px) scale(0.9);
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    #nav-dl-btn.visible {
+      opacity: 1; transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+    #nav-dl-btn ion-icon { font-size: 0.95rem; }
+    @media (max-width: 600px) { #nav-dl-btn span { display: none; } }
     /* sticky header */
     .cert-hours-label{display:inline-block;margin-top:3px;font-size:0.65rem;font-weight:500;color:#666;letter-spacing:.03em;}
     /* accordion */
@@ -199,19 +215,31 @@
     /* gate */
     #gate{position:fixed;inset:0;background:rgba(13,13,13,0.92);z-index:99998;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);}
     #gate.pass{opacity:0;pointer-events:none;transition:opacity 0.4s ease;}
-    #gate-widget{background:#fff;border-radius:4px;width:302px;box-shadow:0 4px 24px rgba(0,0,0,0.6);overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
-    #gate-body{display:flex;align-items:center;padding:14px 16px;gap:14px;min-height:66px;}
-    #gate-cb-wrap{flex-shrink:0;width:28px;height:28px;position:relative;cursor:pointer;}
-    #gate-cb-wrap input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;margin:0;z-index:2;}
-    #gate-box{width:28px;height:28px;border:2px solid #d9d9d9;border-radius:2px;display:flex;align-items:center;justify-content:center;background:#fff;box-sizing:border-box;transition:border-color .2s;}
-    #gate-cb-wrap:hover #gate-box{border-color:#0051c3;}
-    #gate-box .gate-spinner{display:none;width:18px;height:18px;border:2px solid #e0e0e0;border-top-color:#f38020;border-radius:50%;animation:gspin .7s linear infinite;}
+    #gate-widget{background:#fff;border-radius:4px;width:320px;box-shadow:0 4px 24px rgba(0,0,0,0.6);overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
+    #gate-email-top{padding:16px 16px 12px;}
+    #gate-email-top p{font-size:13px;color:#3d3d3d;margin:0 0 10px;font-weight:500;line-height:1.4;}
+    #gate-email-input{width:100%;box-sizing:border-box;padding:9px 12px;border:1.5px solid #d9d9d9;border-radius:4px;font-size:13px;outline:none;transition:border-color .2s;}
+    #gate-email-input:focus{border-color:var(--accent);}
+    #gate-email-err{font-size:11px;color:#c00;margin:5px 0 0;display:none;}
+    #gate-body{display:flex;align-items:center;padding:12px 16px;gap:14px;min-height:56px;border-top:1px solid #efefef;border-bottom:1px solid #efefef;}
+    #gate-cb-wrap{flex-shrink:0;width:28px;height:28px;position:relative;}
+    #gate-cb-wrap input{position:absolute;inset:0;opacity:0;width:100%;height:100%;margin:0;z-index:2;}
+    #gate-cb-wrap:not(.locked){cursor:pointer;}
+    #gate-cb-wrap.locked input{cursor:not-allowed;pointer-events:none;}
+    #gate-box{width:28px;height:28px;border:2px solid #d9d9d9;border-radius:2px;display:flex;align-items:center;justify-content:center;background:#fff;box-sizing:border-box;transition:border-color .2s,opacity .2s;}
+    #gate-cb-wrap:not(.locked):hover #gate-box{border-color:var(--accent);}
+    #gate-cb-wrap.locked #gate-box{opacity:.4;}
+    #gate-box .gate-spinner{display:none;width:18px;height:18px;border:2px solid #e0e0e0;border-top-color:var(--accent);border-radius:50%;animation:gspin .7s linear infinite;}
     #gate-box .gate-tick{display:none;}
     @keyframes gspin{to{transform:rotate(360deg)}}
-    #gate-label{flex:1;font-size:14px;color:#3d3d3d;line-height:1.4;user-select:none;}
+    #gate-label{flex:1;font-size:13px;color:#3d3d3d;line-height:1.4;user-select:none;}
     #gate-label small{display:block;font-size:11px;color:#b0b0b0;margin-top:2px;}
     #gate-brand{display:flex;flex-direction:column;align-items:center;gap:2px;flex-shrink:0;}
     #gate-brand span{font-size:9px;color:#aaa;letter-spacing:.04em;}
+    #gate-continue-wrap{padding:10px 16px 14px;}
+    #gate-continue-btn{width:100%;padding:9px;background:var(--accent);color:#fff;border:none;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer;transition:opacity .2s;}
+    #gate-continue-btn:disabled{opacity:.35;cursor:not-allowed;}
+    #gate-continue-btn:not(:disabled):hover{opacity:.85;}
     #gate-error{display:none;padding:8px 16px;background:#fff3f3;border-top:1px solid #ffd6d6;font-size:12px;color:#c00;text-align:center;}
     #gate-footer{background:#f8f8f8;border-top:1px solid #efefef;padding:5px 12px;display:flex;justify-content:space-between;font-size:10px;color:#b0b0b0;}
   </style>
@@ -221,8 +249,13 @@
 
   <div id="gate">
     <div id="gate-widget">
+      <div id="gate-email-top">
+        <p>Enter your email to access the documents</p>
+        <input type="email" id="gate-email-input" placeholder="your@email.com" autocomplete="email">
+        <p id="gate-email-err"></p>
+      </div>
       <div id="gate-body">
-        <div id="gate-cb-wrap">
+        <div id="gate-cb-wrap" class="locked">
           <input type="checkbox" id="gate-cb" autocomplete="off">
           <div id="gate-box">
             <div class="gate-spinner"></div>
@@ -231,9 +264,12 @@
         </div>
         <div id="gate-label">Verify you are human<small id="gate-status"></small></div>
         <div id="gate-brand">
-          <svg width="28" height="34" viewBox="0 0 28 34" fill="none"><path d="M14 1L2 6.5V17c0 7.18 5.16 13.9 12 15.49C20.84 30.9 26 24.18 26 17V6.5L14 1Z" fill="#f38020"/><path d="M14 8v12M9 13l5-5 5 5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="28" height="34" viewBox="0 0 28 34" fill="none"><path d="M14 1L2 6.5V17c0 7.18 5.16 13.9 12 15.49C20.84 30.9 26 24.18 26 17V6.5L14 1Z" fill="#E3242B"/><path d="M14 8v12M9 13l5-5 5 5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <span>Turnstile</span>
         </div>
+      </div>
+      <div id="gate-continue-wrap">
+        <button id="gate-continue-btn" disabled>Continue →</button>
       </div>
       <div id="gate-error">Verification failed. Please try again.</div>
       <div id="gate-footer"><span>Privacy</span><span>Terms</span></div>
@@ -246,22 +282,44 @@
         document.getElementById('gate').style.display='none';
         return;
       }
-      var t0=Date.now();
       document.body.style.overflow='hidden';
-      var gate=document.getElementById('gate');
-      var box=document.getElementById('gate-box');
-      var cb=document.getElementById('gate-cb');
-      var status=document.getElementById('gate-status');
-      var errEl=document.getElementById('gate-error');
-      var spinner=box.querySelector('.gate-spinner');
-      var tick=box.querySelector('.gate-tick');
-      var labelText=document.querySelector('#gate-label');
-      cb.addEventListener('change',function(){
+
+      var gate       = document.getElementById('gate');
+      var emailInput = document.getElementById('gate-email-input');
+      var emailErr   = document.getElementById('gate-email-err');
+      var cbWrap     = document.getElementById('gate-cb-wrap');
+      var cb         = document.getElementById('gate-cb');
+      var box        = document.getElementById('gate-box');
+      var spinner    = box.querySelector('.gate-spinner');
+      var tick       = box.querySelector('.gate-tick');
+      var status     = document.getElementById('gate-status');
+      var labelText  = document.getElementById('gate-label');
+      var errEl      = document.getElementById('gate-error');
+      var continueBtn= document.getElementById('gate-continue-btn');
+      var t0         = Date.now();
+      var verified   = false;
+
+      function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+      // Step 1: email unlocks Turnstile
+      emailInput.addEventListener('input', function(){
+        var ok = validEmail(this.value.trim());
+        if(ok){ cbWrap.classList.remove('locked'); cb.disabled=false; emailErr.style.display='none'; }
+        else  { cbWrap.classList.add('locked');    cb.disabled=true; }
+      });
+      emailInput.addEventListener('keydown', function(e){
+        if(e.key==='Enter' && !cbWrap.classList.contains('locked')) cb.click();
+      });
+
+      // Step 2: Turnstile unlocks Continue
+      cb.disabled = true;
+      cb.addEventListener('change', function(){
+        if(!validEmail(emailInput.value.trim())){ cb.checked=false; return; }
         cb.disabled=true;
         if(Date.now()-t0<500){
           cb.disabled=false; cb.checked=false;
           errEl.style.display='block';
-          setTimeout(function(){errEl.style.display='none'; t0=Date.now();},3000);
+          setTimeout(function(){ errEl.style.display='none'; t0=Date.now(); },3000);
           return;
         }
         box.style.border='none';
@@ -273,13 +331,39 @@
           box.style.cssText='width:28px;height:28px;display:flex;align-items:center;justify-content:center;background:#f0fff4;border:2px solid #00b140;border-radius:2px;box-sizing:border-box;';
           status.textContent='';
           labelText.firstChild.textContent='You are human';
-          setTimeout(function(){
-            gate.classList.add('pass');
-            document.body.style.overflow='';
-            sessionStorage.setItem('gp','1');
-            setTimeout(function(){gate.style.display='none';},400);
-          },600);
+          verified=true;
+          continueBtn.disabled=false;
         },1500);
+      });
+
+      // Step 3: Continue submits email+IP then unlocks
+      function unlock(){
+        gate.classList.add('pass');
+        document.body.style.overflow='';
+        sessionStorage.setItem('gp','1');
+        setTimeout(function(){ gate.style.display='none'; },400);
+      }
+
+      continueBtn.addEventListener('click', function(){
+        if(!verified) return;
+        var email = emailInput.value.trim();
+        continueBtn.textContent='Submitting…';
+        continueBtn.disabled=true;
+        fetch('https://api.ipify.org?format=json')
+          .then(function(r){ return r.json(); })
+          .catch(function(){ return {ip:'unknown'}; })
+          .then(function(ipData){
+            return fetch('https://formspree.io/f/xrpqkvqr',{
+              method:'POST',
+              headers:{'Content-Type':'application/json','Accept':'application/json'},
+              body:JSON.stringify({email:email,ip:ipData.ip,visited:new Date().toLocaleString('en-PH',{timeZone:'Asia/Manila'}),page:window.location.href})
+            });
+          })
+          .then(function(res){
+            if(res.ok) unlock();
+            else{ continueBtn.textContent='Continue →'; continueBtn.disabled=false; emailErr.textContent='Submission failed. Try again.'; emailErr.style.display='block'; }
+          })
+          .catch(unlock);
       });
     })();
   </script>
@@ -297,6 +381,9 @@
         <li><a href="#awards" class="nav-link">Awards</a></li>
         <li><a href="#clearances" class="nav-link">Clearances</a></li>
       </ul>
+      <button id="nav-dl-btn" aria-label="Download All Documents">
+        <ion-icon name="download-outline"></ion-icon><span>Download All</span>
+      </button>
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -540,39 +627,27 @@
       <div class="resume-block">
         <h3 class="resume-block-title"><ion-icon name="document-text-outline"></ion-icon> Official Documents</h3>
 
-        <p class="doc-sub-label first"><ion-icon name="person-circle-outline"></ion-icon> Personal Data Sheet (PDS)</p>
-        <div class="cert-grid">
+        <div class="cert-grid" style="margin-top:16px;">
+          <!-- Reversed order so grid-reversal script produces: PDS → Diploma → TOR → Eligibility -->
+          <div class="cert-card" data-cert-link data-cert-src="../assets/docs/eligibility.jpg" data-cert-title="Certificate of Eligibility — Civil Service Professional" data-cert-date="December 18, 2015">
+            <div class="cert-thumb"><img src="../assets/docs/eligibility.jpg" alt="Certificate of Eligibility" loading="lazy"><div class="cert-overlay"><ion-icon name="expand-outline"></ion-icon></div></div>
+            <div class="cert-info"><p class="cert-name">Certificate of Eligibility — Civil Service Professional</p><span class="cert-date-label">December 18, 2015</span></div>
+          </div>
+          <div style="display:none" data-cert-link data-cert-group="tor" data-cert-src="../assets/docs/tor/Transcript of Records_page-0002.jpg" data-cert-title="Transcript of Records — Xavier University, Page 2" data-cert-date="2026"></div>
+          <div class="cert-card" data-cert-link data-cert-group="tor" data-cert-src="../assets/docs/tor/Transcript of Records_page-0001.jpg" data-cert-title="Transcript of Records — Xavier University, Page 1" data-cert-date="2026">
+            <div class="cert-thumb"><img src="../assets/docs/tor/Transcript of Records_page-0001.jpg" alt="Transcript of Records Page 1" loading="lazy"><div class="cert-overlay"><ion-icon name="expand-outline"></ion-icon></div></div>
+            <div class="cert-info"><p class="cert-name">Transcript of Records — Xavier University</p><span class="cert-date-label">2026</span></div>
+          </div>
+          <div class="cert-card" style="cursor:default;">
+            <div class="cert-thumb cert-thumb--ph"><img src="../assets/images/favicons/ms-icon-310x310.png" alt="Diploma placeholder" loading="lazy"></div>
+            <div class="cert-info"><p class="cert-name">Diploma — Xavier University</p><span class="cert-date-label">Pending request</span></div>
+          </div>
           <div style="display:none" data-cert-link data-cert-group="pds" data-cert-src="../assets/docs/pds/4_page-0001.jpg" data-cert-title="Personal Data Sheet — Page 4" data-cert-date="2026"></div>
           <div style="display:none" data-cert-link data-cert-group="pds" data-cert-src="../assets/docs/pds/3_page-0001.jpg" data-cert-title="Personal Data Sheet — Page 3" data-cert-date="2026"></div>
           <div style="display:none" data-cert-link data-cert-group="pds" data-cert-src="../assets/docs/pds/2_page-0001.jpg" data-cert-title="Personal Data Sheet — Page 2" data-cert-date="2026"></div>
           <div class="cert-card" data-cert-link data-cert-group="pds" data-cert-src="../assets/docs/pds/1_page-0001.jpg" data-cert-title="Personal Data Sheet — Page 1" data-cert-date="2026">
             <div class="cert-thumb"><img src="../assets/docs/pds/1_page-0001.jpg" alt="PDS Page 1" loading="lazy"><div class="cert-overlay"><ion-icon name="expand-outline"></ion-icon></div></div>
             <div class="cert-info"><p class="cert-name">Personal Data Sheet</p><span class="cert-date-label">2026</span></div>
-          </div>
-        </div>
-
-        <p class="doc-sub-label"><ion-icon name="school-outline"></ion-icon> Diploma</p>
-        <div class="cert-grid">
-          <div class="cert-card" style="cursor:default;">
-            <!-- <div class="cert-thumb cert-thumb--ph"><img src="../assets/images/favicons/ms-icon-310x310.png" alt="Diploma" loading="lazy"><div class="cert-overlay"><ion-icon name="expand-outline"></ion-icon></div></div> -->
-            <div class="cert-info"><p class="cert-name">Diploma — Xavier University</p><span class="cert-date-label">Pending request</span></div>
-          </div>
-        </div>
-
-        <p class="doc-sub-label"><ion-icon name="reader-outline"></ion-icon> Transcript of Records</p>
-        <div class="cert-grid">
-          <div style="display:none" data-cert-link data-cert-group="tor" data-cert-src="../assets/docs/tor/Transcript of Records_page-0002.jpg" data-cert-title="Transcript of Records — Xavier University, Page 2" data-cert-date="2026"></div>
-          <div class="cert-card" data-cert-link data-cert-group="tor" data-cert-src="../assets/docs/tor/Transcript of Records_page-0001.jpg" data-cert-title="Transcript of Records — Xavier University, Page 1" data-cert-date="2026">
-            <div class="cert-thumb"><img src="../assets/docs/tor/Transcript of Records_page-0001.jpg" alt="Transcript of Records Page 1" loading="lazy"><div class="cert-overlay"><ion-icon name="expand-outline"></ion-icon></div></div>
-            <div class="cert-info"><p class="cert-name">Transcript of Records — Xavier University</p><span class="cert-date-label">2026</span></div>
-          </div>
-        </div>
-
-        <p class="doc-sub-label"><ion-icon name="shield-checkmark-outline"></ion-icon> Certificate of Eligibility</p>
-        <div class="cert-grid">
-          <div class="cert-card" data-cert-link data-cert-src="../assets/docs/eligibility.jpg" data-cert-title="Certificate of Eligibility — Civil Service Professional" data-cert-date="December 18, 2015">
-            <div class="cert-thumb cert-thumb--land"><img src="../assets/docs/eligibility.jpg" alt="Certificate of Eligibility" loading="lazy"><div class="cert-overlay"><ion-icon name="expand-outline"></ion-icon></div></div>
-            <div class="cert-info"><p class="cert-name">Certificate of Eligibility — Civil Service Professional</p><span class="cert-date-label">December 18, 2015</span></div>
           </div>
         </div>
 
@@ -801,35 +876,23 @@
       <div class="resume-block">
         <h3 class="resume-block-title"><ion-icon name="shield-outline"></ion-icon> Employment &amp; Clearances</h3>
 
-        <p class="doc-sub-label first"><ion-icon name="bar-chart-outline"></ion-icon> Last Rating Period</p>
-        <div class="cert-grid">
-          <div class="cert-card" data-cert-link data-cert-src="../assets/docs/ratings.jpg" data-cert-title="Last Rating Period — January to June 2026" data-cert-date="July 6, 2026">
-            <div class="cert-thumb"><img src="../assets/docs/ratings.jpg" alt="Last Rating Period" loading="lazy"><div class="cert-overlay"><ion-icon name="expand-outline"></ion-icon></div></div>
-            <div class="cert-info"><p class="cert-name">Last Rating Period</p><span class="cert-date-label">July 6, 2026</span></div>
+        <div class="cert-grid" style="margin-top:16px;">
+          <!-- Reversed so grid-reversal script produces: Rating → Employment → No Pending Case → NBI -->
+          <div class="cert-card" data-cert-link data-cert-src="../assets/docs/nbi.jpg" data-cert-title="NBI Clearance" data-cert-date="2026">
+            <div class="cert-thumb"><img src="../assets/docs/nbi.jpg" alt="NBI Clearance" loading="lazy"><div class="cert-overlay"><ion-icon name="expand-outline"></ion-icon></div></div>
+            <div class="cert-info"><p class="cert-name">NBI Clearance</p><span class="cert-date-label">Pending request</span></div>
           </div>
-        </div>
-
-        <p class="doc-sub-label"><ion-icon name="briefcase-outline"></ion-icon> Certificate of Employment</p>
-        <div class="cert-grid">
-          <div class="cert-card" data-cert-link data-cert-src="../assets/docs/certificate of employment.jpg" data-cert-title="Certificate of Employment" data-cert-date="2026">
-            <div class="cert-thumb"><img src="../assets/docs/certificate of employment.jpg" alt="Certificate of Employment" loading="lazy"><div class="cert-overlay"><ion-icon name="expand-outline"></ion-icon></div></div>
-            <div class="cert-info"><p class="cert-name">Certificate of Employment</p><span class="cert-date-label">2026</span></div>
-          </div>
-        </div>
-
-        <p class="doc-sub-label"><ion-icon name="checkmark-done-circle-outline"></ion-icon> Certificate of No Pending Case</p>
-        <div class="cert-grid">
           <div class="cert-card" data-cert-link data-cert-src="../assets/docs/no pending case.jpg" data-cert-title="Certificate of No Pending Case" data-cert-date="2026">
             <div class="cert-thumb"><img src="../assets/docs/no pending case.jpg" alt="Certificate of No Pending Case" loading="lazy"><div class="cert-overlay"><ion-icon name="expand-outline"></ion-icon></div></div>
             <div class="cert-info"><p class="cert-name">Certificate of No Pending Case</p><span class="cert-date-label">2026</span></div>
           </div>
-        </div>
-
-        <p class="doc-sub-label"><ion-icon name="finger-print-outline"></ion-icon> NBI Clearance</p>
-        <div class="cert-grid">
-          <div class="cert-card" data-cert-link data-cert-src="../assets/docs/nbi.jpg" data-cert-title="NBI Clearance" data-cert-date="2026">
-            <div class="cert-thumb"><img src="../assets/docs/nbi.jpg" alt="NBI Clearance" loading="lazy"><div class="cert-overlay"><ion-icon name="expand-outline"></ion-icon></div></div>
-            <div class="cert-info"><p class="cert-name">NBI Clearance</p><span class="cert-date-label">Pending request</span></div>
+          <div class="cert-card" data-cert-link data-cert-src="../assets/docs/certificate of employment.jpg" data-cert-title="Certificate of Employment" data-cert-date="2026">
+            <div class="cert-thumb"><img src="../assets/docs/certificate of employment.jpg" alt="Certificate of Employment" loading="lazy"><div class="cert-overlay"><ion-icon name="expand-outline"></ion-icon></div></div>
+            <div class="cert-info"><p class="cert-name">Certificate of Employment</p><span class="cert-date-label">2026</span></div>
+          </div>
+          <div class="cert-card" data-cert-link data-cert-src="../assets/docs/ratings.jpg" data-cert-title="Last Rating Period — January to June 2026" data-cert-date="July 6, 2026">
+            <div class="cert-thumb"><img src="../assets/docs/ratings.jpg" alt="Last Rating Period" loading="lazy"><div class="cert-overlay"><ion-icon name="expand-outline"></ion-icon></div></div>
+            <div class="cert-info"><p class="cert-name">Last Rating Period</p><span class="cert-date-label">July 6, 2026</span></div>
           </div>
         </div>
 
@@ -1072,6 +1135,11 @@
     const navList = document.querySelector('.nav-list');
     navToggle.addEventListener('click', function(){ this.classList.toggle('active'); navList.classList.toggle('active'); });
     document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => { navToggle.classList.remove('active'); navList.classList.remove('active'); }));
+    // Float download button to header on scroll
+    const navDlBtn = document.getElementById('nav-dl-btn');
+    new IntersectionObserver(([e]) => navDlBtn.classList.toggle('visible', !e.isIntersecting))
+      .observe(document.getElementById('downloadAllBtn'));
+    navDlBtn.addEventListener('click', () => document.getElementById('downloadAllBtn').click());
     // Active nav on scroll
     const dictNavLinks = document.querySelectorAll('.nav-link[href^="#"]');
     const dictObserver = new IntersectionObserver(entries => {
