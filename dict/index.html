@@ -242,6 +242,8 @@
     #gate-continue-btn:not(:disabled):hover{opacity:.85;}
     #gate-error{display:none;padding:8px 16px;background:#fff3f3;border-top:1px solid #ffd6d6;font-size:12px;color:#c00;text-align:center;}
     #gate-footer{background:#f8f8f8;border-top:1px solid #efefef;padding:5px 12px;display:flex;justify-content:space-between;font-size:10px;color:#b0b0b0;}
+    #gate-footer a{color:#b0b0b0;text-decoration:none;}
+    #gate-footer a:hover{color:#555;text-decoration:underline;}
   </style>
 </head>
 
@@ -272,7 +274,7 @@
         <button id="gate-continue-btn" disabled>Continue →</button>
       </div>
       <div id="gate-error">Verification failed. Please try again.</div>
-      <div id="gate-footer"><span>Privacy</span><span>Terms</span></div>
+      <div id="gate-footer"><a href="https://abcede.dev/privacy" target="_blank" rel="noopener">Privacy</a><a href="https://abcede.dev/terms" target="_blank" rel="noopener">Terms</a></div>
     </div>
   </div>
 
