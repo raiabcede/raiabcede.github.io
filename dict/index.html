@@ -937,6 +937,18 @@
     prevBtn.addEventListener('click', e => { e.stopPropagation(); if (certIdx > 0) showCert(certIdx - 1); });
     nextBtn.addEventListener('click', e => { e.stopPropagation(); if (certIdx < certCards.length - 1) showCert(certIdx + 1); });
 
+    // Swipe to navigate (mobile) — only when not zoomed
+    let swipeX = null;
+    lightbox.addEventListener('touchstart', e => { if (zScale > 1) return; swipeX = e.touches[0].clientX; }, { passive: true });
+    lightbox.addEventListener('touchend', e => {
+      if (zScale > 1 || swipeX === null || certIdx === -1) { swipeX = null; return; }
+      const dx = e.changedTouches[0].clientX - swipeX;
+      swipeX = null;
+      if (Math.abs(dx) < 50) return;
+      if (dx < 0 && certIdx < certCards.length - 1) showCert(certIdx + 1);
+      if (dx > 0 && certIdx > 0) showCert(certIdx - 1);
+    }, { passive: true });
+
     // Zoom & pan
     let zScale = 1, zTx = 0, zTy = 0, zDragging = false, zDragMoved = false, zSx, zSy, zLastDist = 0;
     const lbZoomBar = document.getElementById('lb-zoom-bar');
